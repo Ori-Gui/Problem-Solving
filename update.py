@@ -12,8 +12,8 @@ BOJ_TIER_ORDER = {
     "Bronze": "🥉 Bronze",
     "Silver": "🥈 Silver",
     "Gold": "🥇 Gold",
-    "Platinum": "💎 Platinum",
-    "Diamond": "🔷 Diamond",
+    "Platinum": "💚 Platinum",
+    "Diamond": "❤ Diamond",
     "Ruby": "❤️ Ruby"
 }
 
