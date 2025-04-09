@@ -109,7 +109,13 @@ def main():
         content += f"## 📚 {main_cat}\n"
         
         # 서브 카테고리(예: Bronze, Silver 등)를 정렬하여 반복
-        keys_sorted = sorted(keys, key=lambda x: x[0][1])
+        if main_cat == "백준":
+            # 백준은 지정된 순서대로 정렬
+            order = ["Bronze", "Silver", "Gold", "Platinum", "Diamond", "Ruby"]
+            keys_sorted = sorted(keys, key=lambda item: order.index(item[0][1]) if item[0][1] in order else 999)
+        else:
+            # 나머지는 사전순으로 정렬
+            keys_sorted = sorted(keys, key=lambda x: x[0][1])
         
         for (mc, sub_cat), problem_map in keys_sorted:
             # sub_cat이 "."인 경우는 작성하지 않음
