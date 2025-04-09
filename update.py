@@ -50,14 +50,14 @@ def main():
         # 이 경로(root)에서 메인 카테고리가 어느 것에 속하는지 체크
         main_cat = None
         for cat in main_categories:
-            # 경로에 '/백준/' 같이 포함되어 있는지 또는 경로가 바로 해당 폴더인지 확인
+            # 경로에 '/백준/' 같이 포함되어 있거나, 경로가 바로 해당 폴더일 경우
             if os.sep + cat + os.sep in root or root.endswith(os.sep + cat) or root == "./" + cat:
                 main_cat = cat
                 break
         if main_cat is None:
             continue
         
-        # 메인 카테고리 경로 뒤에 오는 부분을 하위 카테고리로 사용한다.
+        # 메인 카테고리 경로 뒤의 부분을 하위 카테고리로 사용
         main_path = os.path.join(".", main_cat)
         rel_path = os.path.relpath(root, main_path)
         if rel_path == ".":  # 메인 카테고리 폴더 자체라면
@@ -70,38 +70,49 @@ def main():
             data[key] = []
         
         for file in files:
+            # README 파일은 제외 (각 문제 설명문으로 판단)
+            if file.lower() == "readme.md":
+                continue
             file_path = os.path.join(root, file)
             data[key].append(file_path)
     
-    # data 내용을 바탕으로 content 구성
+    # data의 내용을 바탕으로 content 구성 (sub_cat이 (default)인 경우는 건너뜀)
     for main_cat in main_categories:
-        # 해당 메인 카테고리에 관련된 키들을 가져옴
-        keys = sorted([k for k in data.keys() if k[0] == main_cat], key=lambda x: x[1])
+        # 메인 카테고리에 속하면서 sub_cat이 (default)가 아닌 항목들만 처리
+        keys = sorted([k for k in data.keys() if k[0] == main_cat and k[1] != "(default)"],
+                      key=lambda x: x[1])
         if not keys:
             continue
         # 메인 카테고리 헤더
         content += f"## 📚 {main_cat}\n"
         for key in keys:
             sub_cat = key[1]
-            if sub_cat == "(default)":
-                title = sub_cat
+            # 하위 카테고리 타이틀 생성
+            if main_cat == "백준":
+                title = BOJ_TIER_ORDER.get(sub_cat, f"✅ {sub_cat}")
+            elif main_cat == "프로그래머스":
+                title = PROGRAMMERS_LEVEL.get(sub_cat, f"📘 Lv.{sub_cat}")
+            elif main_cat == "SWEA":
+                title = swea_label(sub_cat)
             else:
-                if main_cat == "백준":
-                    title = BOJ_TIER_ORDER.get(sub_cat, f"✅ {sub_cat}")
-                elif main_cat == "프로그래머스":
-                    title = PROGRAMMERS_LEVEL.get(sub_cat, f"📘 Lv.{sub_cat}")
-                elif main_cat == "SWEA":
-                    title = swea_label(sub_cat)
-                else:
-                    title = sub_cat
+                title = sub_cat
             # 하위 카테고리 헤더 및 테이블 헤더
             content += f"### {title}\n"
             content += "| 문제번호 & 문제명 | 링크 |\n"
             content += "| ----- | ----- |\n"
-            # 파일 목록 추가 (문제번호는 파일명에서 확장자 제거한 값)
+            # 파일 목록 추가
             for fp in sorted(data[key]):
-                problem_id = os.path.splitext(os.path.basename(fp))[0]
-                content += "|{}|[링크]({})|\n".format(problem_id, parse.quote(fp))
+                basename = os.path.basename(fp)
+                name_no_ext = os.path.splitext(basename)[0]
+                # 파일명에 언더스코어가 있으면 이를 문제번호와 제목으로 분리
+                if "_" in name_no_ext:
+                    parts = name_no_ext.split("_", 1)
+                    prob_num = parts[0].strip()
+                    prob_title = parts[1].strip()
+                    display_name = f"{prob_num} - {prob_title}"
+                else:
+                    display_name = name_no_ext
+                content += "|{}|[링크]({})|\n".format(display_name, parse.quote(fp))
     
     with open("README.md", "w", encoding="utf-8") as fd:
         fd.write(content)
