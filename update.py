@@ -49,8 +49,8 @@ def main():
     
     # 메인 카테고리 이름들
     main_categories = ["백준", "프로그래머스", "SWEA"]
-    # 카테고리별 파일 정보를 저장할 딕셔너리
-    # 키: (메인카테고리, 하위카테고리) / 하위카테고리가 폴더명이 되며, 파싱을 통해 표시
+    # 데이터 구조:
+    # data[(메인카테고리, 서브카테고리)] = { 문제폴더이름: [파일경로, ...] }
     data = {}
     
     for root, dirs, files in os.walk("."):
@@ -69,23 +69,18 @@ def main():
         if main_cat is None:
             continue
         
-        # 메인 카테고리 바로 아래 폴더(또는 그 아래 하위 경로)를 sub_cat으로 간주
+        # 메인 카테고리 바로 아래 폴더(또는 그 아래 하위 경로)를 서브 카테고리(sub_cat)로 간주
         main_path = os.path.join(".", main_cat)
         rel_path = os.path.relpath(root, main_path)  # 예: 'Bronze/1000. A+B' 등
-        # 하위 경로를 '/'로 나눈 첫 요소가 하위 카테고리(예: Bronze)
         parts = rel_path.split(os.sep)
         sub_cat = parts[0]  # 예: Bronze
         
-        # 만약 하위 카테고리도 또 폴더를 갖고 있다면?
-        # (1000. A+B 같은 폴더는 'Bronze/1000. A+B'에서 두 번째 요소)
-        # 예) rel_path = "Bronze/1000. A+B" 라면
-        # 하위 디렉토리명은 '1000. A+B' (여기서 문제번호/문제이름 파싱)
+        # 문제 폴더가 있다면(예: "1000. A+B")
         problem_folder = None
         if len(parts) > 1:
-            problem_folder = parts[1]  # "1000. A+B" 같은 실제 문제 폴더
+            problem_folder = parts[1]
         
-        # 데이터 구조: data[(main_cat, sub_cat)] = { 문제폴더이름: [파일목록...] }
-        # 없으면 초기화
+        # data 초기화
         if (main_cat, sub_cat) not in data:
             data[(main_cat, sub_cat)] = {}
         
@@ -99,14 +94,13 @@ def main():
                 full_path = os.path.join(root, file)
                 data[(main_cat, sub_cat)][problem_folder].append(full_path)
         else:
-            # 문제폴더가 아니라, sub_cat 자신이 문제폴더인 경우도 있을 수 있으나
-            # (ex: 백준/Lv.0 에 파일이 바로 있는 경우)
-            # 여기서는 별도로 처리할지 여부 결정 (원한다면 default 처리)
+            # sub_cat 자체가 문제 폴더인 경우(파일이 바로 서브 카테고리 폴더에 있는 경우)
+            # 필요시 default 처리(여기서는 무시)
             pass
     
-    # data의 내용을 바탕으로 content 구성
+    # data의 내용을 바탕으로 content 구성 - 각 서브 카테고리(레벨)별로 **하나의 표** 생성
     for main_cat in main_categories:
-        # 해당 메인 카테고리에 대응하는 (main_cat, sub_cat) 목록
+        # 해당 메인 카테고리에 해당하는 (main_cat, sub_cat) 키 목록
         keys = [(k, v) for k, v in data.items() if k[0] == main_cat]
         if not keys:
             continue
@@ -114,11 +108,11 @@ def main():
         # 메인 카테고리 헤더
         content += f"## 📚 {main_cat}\n"
         
-        # sub_cat(예: Bronze, Silver 등) 알파벳/한글 순으로 정렬
+        # 서브 카테고리(예: Bronze, Silver 등)를 정렬하여 반복
         keys_sorted = sorted(keys, key=lambda x: x[0][1])
         
         for (mc, sub_cat), problem_map in keys_sorted:
-            # 백준, 프로그래머스, SWEA 각각 서브카테고리를 어떻게 표현할지
+            # 서브 카테고리 헤더 표현 방식 (백준, 프로그래머스, SWEA에 따라 다르게)
             if mc == "백준":
                 tier_title = BOJ_TIER_ORDER.get(sub_cat, f"✅ {sub_cat}")
             elif mc == "프로그래머스":
@@ -129,23 +123,18 @@ def main():
                 tier_title = sub_cat
             
             content += f"### {tier_title}\n"
+            # 하나의 표에 문제 폴더별 행들을 모두 모음
+            content += "| 문제 | 파일명(소스) | 링크 |\n"
+            content += "| ----- | ---------- | ---- |\n"
             
-            # 문제 폴더들을 표시
-            # 문제 폴더명 예: "1000. A+B"
-            #    → parse_problem_folder( "1000. A+B" ) = "1000 - A+B"
-            
-            # 문제별 마크다운 테이블 (문제폴더와 해당 폴더 안의 파일목록)
+            # 각 문제 폴더에 대한 항목들을 순회하여 한 표로 출력
             for pfolder, file_list in sorted(problem_map.items()):
                 parsed_name = parse_problem_folder(pfolder)
-                # 문제 테이블의 헤더
-                content += f"#### {parsed_name}\n"
-                content += "| 파일명(소스) | 링크 |\n"
-                content += "| ---------- | ---- |\n"
                 for fp in sorted(file_list):
                     file_name = os.path.basename(fp)
-                    # 소스코드 파일명 그대로 표시
-                    content += f"|{file_name}|[링크]({parse.quote(fp)})|\n"
-                content += "\n"
+                    content += f"| {parsed_name} | {file_name} | [링크]({parse.quote(fp)}) |\n"
+            
+            content += "\n"
     
     with open("README.md", "w", encoding="utf-8") as fd:
         fd.write(content)
