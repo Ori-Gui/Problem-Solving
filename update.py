@@ -73,9 +73,9 @@ def main():
         main_path = os.path.join(".", main_cat)
         rel_path = os.path.relpath(root, main_path)  # 예: 'Bronze/1000. A+B' 등
         parts = rel_path.split(os.sep)
-        sub_cat = parts[0]  # 예: Bronze
+        sub_cat = parts[0]  # 예: Bronze 또는 "." (파일이 바로 메인 폴더에 있을 때)
         
-        # 문제 폴더가 있다면(예: "1000. A+B")
+        # 문제 폴더가 있다면 (예: "1000. A+B")
         problem_folder = None
         if len(parts) > 1:
             problem_folder = parts[1]
@@ -94,8 +94,8 @@ def main():
                 full_path = os.path.join(root, file)
                 data[(main_cat, sub_cat)][problem_folder].append(full_path)
         else:
-            # sub_cat 자체가 문제 폴더인 경우(파일이 바로 서브 카테고리 폴더에 있는 경우)
-            # 필요시 default 처리(여기서는 무시)
+            # sub_cat 자체가 문제 폴더인 경우(메인 카테고리 폴더에 바로 파일이 있는 경우)
+            # 여기서는 별도 처리는 하지 않습니다.
             pass
     
     # data의 내용을 바탕으로 content 구성 - 각 서브 카테고리(레벨)별로 **하나의 표** 생성
@@ -112,6 +112,10 @@ def main():
         keys_sorted = sorted(keys, key=lambda x: x[0][1])
         
         for (mc, sub_cat), problem_map in keys_sorted:
+            # sub_cat이 "."인 경우는 작성하지 않음
+            if sub_cat == ".":
+                continue
+            
             # 서브 카테고리 헤더 표현 방식 (백준, 프로그래머스, SWEA에 따라 다르게)
             if mc == "백준":
                 tier_title = BOJ_TIER_ORDER.get(sub_cat, f"✅ {sub_cat}")
@@ -123,16 +127,15 @@ def main():
                 tier_title = sub_cat
             
             content += f"### {tier_title}\n"
-            # 하나의 표에 문제 폴더별 행들을 모두 모음
-            content += "| 문제 | 파일명(소스) | 링크 |\n"
-            content += "| ----- | ---------- | ---- |\n"
+            # 하나의 표에 문제 폴더별 행들을 모두 모음 (문제와 링크만 있음)
+            content += "| 문제 | 링크 |\n"
+            content += "| ----- | ---- |\n"
             
-            # 각 문제 폴더에 대한 항목들을 순회하여 한 표로 출력
+            # 각 문제 폴더에 대한 항목들을 순회하여 한 표에 출력
             for pfolder, file_list in sorted(problem_map.items()):
                 parsed_name = parse_problem_folder(pfolder)
                 for fp in sorted(file_list):
-                    file_name = os.path.basename(fp)
-                    content += f"| {parsed_name} | {file_name} | [링크]({parse.quote(fp)}) |\n"
+                    content += f"| {parsed_name} | [링크]({parse.quote(fp)}) |\n"
             
             content += "\n"
     
