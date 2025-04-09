@@ -29,85 +29,80 @@ PROGRAMMERS_LEVEL = {
 
 # SWEA 단계 이모지 매핑
 def swea_label(name):
-    return f"🌟 {name.upper()}"  # e.g., D1 → 🌟 D1
+    return f"🌟 {name.upper()}"
 
 def main():
     content = ""
-    content += HEADER
+    content += HEADER + "\n"
     
-    written_titles = set()
-    written_main_dirs = set()
-    
-    # 메인 카테고리 목록
+    # 메인 카테고리 이름들
     main_categories = ["백준", "프로그래머스", "SWEA"]
-
+    # 카테고리별 파일 정보를 저장할 딕셔너리
+    # 키: (메인카테고리, 하위카테고리) / 하위카테고리 없으면 "(default)" 사용
+    data = {}
+    
     for root, dirs, files in os.walk("."):
-        dirs.sort()
-        if root == '.':
-            # .git, .github 같은 폴더는 무시
-            for dir in ('.git', '.github'):
-                try:
-                    dirs.remove(dir)
-                except ValueError:
-                    pass
+        # .git, .github, images 폴더는 건너뛰기
+        dirs[:] = [d for d in dirs if d not in (".git", ".github", "images")]
+        if root == ".":
             continue
-
-        current_dir = os.path.basename(root)
-        parent = os.path.basename(os.path.dirname(root))
-
-        # 1) 현재 디렉토리가 메인 카테고리인 경우 (예: 저장소 최상위에 "백준" 등)
-        if current_dir in main_categories:
-            main_category = current_dir
-            if main_category not in written_main_dirs:
-                content += f"## 📚 {main_category}\n"
-                written_main_dirs.add(main_category)
-            # 메인 폴더에 직접 파일이 있을 경우 목록화
-            if files:
-                title_key = f"{main_category}/(default)"
-                if title_key not in written_titles:
-                    content += f"### (default)\n"
-                    content += "| 문제번호 & 문제명 | 링크 |\n"
-                    content += "| ----- | ----- |\n"
-                    written_titles.add(title_key)
-                for file in files:
-                    problem_id = os.path.splitext(file)[0]
-                    file_path = os.path.join(root, file)
-                    content += "|{}|[링크]({})|\n".format(problem_id, parse.quote(file_path))
+        
+        # 이 경로(root)에서 메인 카테고리가 어느 것에 속하는지 체크
+        main_cat = None
+        for cat in main_categories:
+            # 경로에 '/백준/' 같이 포함되어 있는지 또는 경로가 바로 해당 폴더인지 확인
+            if os.sep + cat + os.sep in root or root.endswith(os.sep + cat) or root == "./" + cat:
+                main_cat = cat
+                break
+        if main_cat is None:
             continue
-
-        # 2) 현재 디렉토리가 메인 카테고리의 하위 디렉토리인 경우
-        if parent in main_categories:
-            main_category = parent
-            if main_category not in written_main_dirs:
-                content += f"## 📚 {main_category}\n"
-                written_main_dirs.add(main_category)
-            
-            # 하위 디렉토리에 해당하는 타이틀 생성
-            if main_category == "백준":
-                tier_title = BOJ_TIER_ORDER.get(current_dir, f"✅ {current_dir}")
-            elif main_category == "프로그래머스":
-                tier_title = PROGRAMMERS_LEVEL.get(current_dir, f"📘 Lv.{current_dir}")
-            elif main_category == "SWEA":
-                tier_title = swea_label(current_dir)
-            else:
-                tier_title = f"☑️ {current_dir}"
-            
-            title_key = f"{main_category}/{current_dir}"
-            if title_key not in written_titles:
-                content += f"### {tier_title}\n"
-                content += "| 문제번호 & 문제명 | 링크 |\n"
-                content += "| ----- | ----- |\n"
-                written_titles.add(title_key)
-
-            # 해당 하위 디렉토리의 문제 파일들을 추가
-            for file in files:
-                problem_id = os.path.splitext(file)[0]
-                file_path = os.path.join(root, file)
-                content += "|{}|[링크]({})|\n".format(problem_id, parse.quote(file_path))
+        
+        # 메인 카테고리 경로 뒤에 오는 부분을 하위 카테고리로 사용한다.
+        main_path = os.path.join(".", main_cat)
+        rel_path = os.path.relpath(root, main_path)
+        if rel_path == ".":  # 메인 카테고리 폴더 자체라면
+            sub_cat = "(default)"
         else:
-            # 메인 카테고리와 관계 없는 디렉토리는 무시
+            sub_cat = rel_path.split(os.sep)[0]  # 바로 아래 폴더명
+        
+        key = (main_cat, sub_cat)
+        if key not in data:
+            data[key] = []
+        
+        for file in files:
+            file_path = os.path.join(root, file)
+            data[key].append(file_path)
+    
+    # data 내용을 바탕으로 content 구성
+    for main_cat in main_categories:
+        # 해당 메인 카테고리에 관련된 키들을 가져옴
+        keys = sorted([k for k in data.keys() if k[0] == main_cat], key=lambda x: x[1])
+        if not keys:
             continue
-
+        # 메인 카테고리 헤더
+        content += f"## 📚 {main_cat}\n"
+        for key in keys:
+            sub_cat = key[1]
+            if sub_cat == "(default)":
+                title = sub_cat
+            else:
+                if main_cat == "백준":
+                    title = BOJ_TIER_ORDER.get(sub_cat, f"✅ {sub_cat}")
+                elif main_cat == "프로그래머스":
+                    title = PROGRAMMERS_LEVEL.get(sub_cat, f"📘 Lv.{sub_cat}")
+                elif main_cat == "SWEA":
+                    title = swea_label(sub_cat)
+                else:
+                    title = sub_cat
+            # 하위 카테고리 헤더 및 테이블 헤더
+            content += f"### {title}\n"
+            content += "| 문제번호 & 문제명 | 링크 |\n"
+            content += "| ----- | ----- |\n"
+            # 파일 목록 추가 (문제번호는 파일명에서 확장자 제거한 값)
+            for fp in sorted(data[key]):
+                problem_id = os.path.splitext(os.path.basename(fp))[0]
+                content += "|{}|[링크]({})|\n".format(problem_id, parse.quote(fp))
+    
     with open("README.md", "w", encoding="utf-8") as fd:
         fd.write(content)
 
