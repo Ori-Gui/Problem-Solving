@@ -35,7 +35,6 @@ def main():
     content = ""
     content += HEADER
     
-    solveds = []
     written_titles = set()
     written_main_dirs = set()
 
@@ -80,10 +79,11 @@ def main():
         else:
             continue  # 무시할 디렉토리
 
+        # 폴더 내 모든 파일을 출력 (각 파일을 문제로 간주)
         for file in files:
-            if root not in solveds:
-                content += "|{}|[링크]({})|\n".format(category, parse.quote(os.path.join(root, file)))
-                solveds.append(root)
+            problem_id = os.path.splitext(file)[0]
+            file_path = os.path.join(root, file)
+            content += "|{}|[링크]({})|\n".format(problem_id, parse.quote(file_path))
 
     with open("README.md", "w", encoding="utf-8") as fd:
         fd.write(content)
