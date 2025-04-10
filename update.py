@@ -44,6 +44,21 @@ def parse_problem_folder(folder_name: str) -> str:
     else:
         return folder_name
 
+def extract_problem_number(folder_name: str) -> int:
+    """
+    폴더 이름에서 문제 번호를 추출합니다.
+    예: "1152. A+B" -> 1152
+    폴더 이름에 '.'가 없으면 정렬 시 뒤로 밀리도록 큰 값을 반환.
+    """
+    if "." in folder_name:
+        try:
+            num_part = folder_name.split(".")[0].strip()
+            return int(num_part)
+        except ValueError:
+            return float("inf")
+    else:
+        return float("inf")
+
 def main():
     content = HEADER + "\n"
     
@@ -56,20 +71,19 @@ def main():
     for root, dirs, files in os.walk("."):
         # .git, .github, images 폴더는 건너뛰기
         dirs[:] = [d for d in dirs if d not in (".git", ".github", "images")]
-        if root == ".":
+        if root == ".":  # 루트 디렉토리는 건너뜁니다.
             continue
         
-        # 이 경로(root)에서 메인 카테고리가 어느 것에 속하는지 체크
+        # 경로(root)에서 메인 카테고리가 어느 것에 속하는지 체크
         main_cat = None
         for cat in main_categories:
-            # 경로에 '/백준/' 같이 포함되어 있거나, 경로가 바로 해당 폴더인 경우
             if os.sep + cat + os.sep in root or root.endswith(os.sep + cat) or root == "./" + cat:
                 main_cat = cat
                 break
         if main_cat is None:
             continue
         
-        # 메인 카테고리 바로 아래 폴더(또는 그 아래 하위 경로)를 서브 카테고리(sub_cat)로 간주
+        # 메인 카테고리 바로 아래 폴더(또는 그 아래 하위 경로)를 서브 카테고리(sub_cat)로 간주합니다.
         main_path = os.path.join(".", main_cat)
         rel_path = os.path.relpath(root, main_path)  # 예: 'Bronze/1000. A+B' 등
         parts = rel_path.split(os.sep)
@@ -95,7 +109,6 @@ def main():
                 data[(main_cat, sub_cat)][problem_folder].append(full_path)
         else:
             # sub_cat 자체가 문제 폴더인 경우(메인 카테고리 폴더에 바로 파일이 있는 경우)
-            # 여기서는 별도 처리는 하지 않습니다.
             pass
     
     # data의 내용을 바탕으로 content 구성 - 각 서브 카테고리(레벨)별로 하나의 표 생성
@@ -108,21 +121,17 @@ def main():
         # 메인 카테고리 헤더
         content += f"## 📚 {main_cat}\n"
         
-        # 서브 카테고리(예: Bronze, Silver 등)를 정렬하여 반복
+        # 서브 카테고리(예: Bronze, Silver 등) 정렬
         if main_cat == "백준":
-            # 백준은 지정된 순서대로 정렬
             order = ["Bronze", "Silver", "Gold", "Platinum", "Diamond", "Ruby"]
             keys_sorted = sorted(keys, key=lambda item: order.index(item[0][1]) if item[0][1] in order else 999)
         else:
-            # 나머지는 사전순으로 정렬
             keys_sorted = sorted(keys, key=lambda x: x[0][1])
         
         for (mc, sub_cat), problem_map in keys_sorted:
-            # sub_cat이 "."인 경우는 작성하지 않음
             if sub_cat == ".":
                 continue
             
-            # 서브 카테고리 헤더 표현 방식 (백준, 프로그래머스, SWEA에 따라 다르게)
             if mc == "백준":
                 tier_title = BOJ_TIER_ORDER.get(sub_cat, f"✅ {sub_cat}")
             elif mc == "프로그래머스":
@@ -133,14 +142,12 @@ def main():
                 tier_title = sub_cat
             
             content += f"### {tier_title}\n"
-            # 하나의 표에 문제 폴더별 행들을 모두 모음 (문제와 링크만 있음)
             content += "| 문제 | 링크 |\n"
             content += "| ----- | ---- |\n"
             
-            # 각 문제 폴더에 대한 항목들을 순회하여 한 표에 출력
-            for pfolder, file_list in sorted(problem_map.items()):
+            # 문제 폴더를 문제 번호 기준(숫자)으로 정렬합니다.
+            for pfolder, file_list in sorted(problem_map.items(), key=lambda item: extract_problem_number(item[0])):
                 parsed_name = parse_problem_folder(pfolder)
-                # 문제 폴더의 링크는 메인카테고리/서브카테고리/문제폴더 경로로 설정
                 folder_path = os.path.join(".", mc, sub_cat, pfolder)
                 content += f"| {parsed_name} | [링크]({parse.quote(folder_path)}) |\n"
             
