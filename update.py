@@ -119,6 +119,7 @@ def main():
             continue
         
         # 메인 카테고리 헤더
+        content += "---\n"
         content += f"## 📚 {main_cat}\n"
         
         # 서브 카테고리(예: Bronze, Silver 등) 정렬
@@ -141,7 +142,6 @@ def main():
             else:
                 tier_title = sub_cat
 
-            content += "---"
             content += f"### {tier_title}\n"
             content += "| 문제 | 링크 |\n"
             content += "| ----- | ---- |\n"
