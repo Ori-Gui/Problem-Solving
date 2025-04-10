@@ -12,8 +12,8 @@ BOJ_TIER_ORDER = {
     "Bronze": "🥉 Bronze",
     "Silver": "🥈 Silver",
     "Gold": "🥇 Gold",
-    "Platinum": "💚 Platinum",
-    "Diamond": "❤ Diamond",
+    "Platinum": "🍏 Platinum",
+    "Diamond": "💎 Diamond",
     "Ruby": "❤️ Ruby"
 }
 
@@ -29,7 +29,7 @@ PROGRAMMERS_LEVEL = {
 
 # SWEA 단계 이모지 매핑 (예시)
 def swea_label(name):
-    return f"🌟 {name.upper()}"
+    return f"⭐ {name.upper()}"
 
 def parse_problem_folder(folder_name: str) -> str:
     """
@@ -98,7 +98,7 @@ def main():
             # 여기서는 별도 처리는 하지 않습니다.
             pass
     
-    # data의 내용을 바탕으로 content 구성 - 각 서브 카테고리(레벨)별로 **하나의 표** 생성
+    # data의 내용을 바탕으로 content 구성 - 각 서브 카테고리(레벨)별로 하나의 표 생성
     for main_cat in main_categories:
         # 해당 메인 카테고리에 해당하는 (main_cat, sub_cat) 키 목록
         keys = [(k, v) for k, v in data.items() if k[0] == main_cat]
@@ -140,8 +140,9 @@ def main():
             # 각 문제 폴더에 대한 항목들을 순회하여 한 표에 출력
             for pfolder, file_list in sorted(problem_map.items()):
                 parsed_name = parse_problem_folder(pfolder)
-                for fp in sorted(file_list):
-                    content += f"| {parsed_name} | [링크]({parse.quote(fp)}) |\n"
+                # 문제 폴더의 링크는 메인카테고리/서브카테고리/문제폴더 경로로 설정
+                folder_path = os.path.join(".", mc, sub_cat, pfolder)
+                content += f"| {parsed_name} | [링크]({parse.quote(folder_path)}) |\n"
             
             content += "\n"
     
