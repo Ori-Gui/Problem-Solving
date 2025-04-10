@@ -140,7 +140,8 @@ def main():
                 tier_title = swea_label(sub_cat)
             else:
                 tier_title = sub_cat
-            
+
+            content += "---"
             content += f"### {tier_title}\n"
             content += "| 문제 | 링크 |\n"
             content += "| ----- | ---- |\n"
