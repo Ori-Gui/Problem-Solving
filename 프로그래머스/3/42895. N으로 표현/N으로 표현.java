@@ -24,9 +24,9 @@ class Solution {
                 k += 1;
             }
             
-            for (int a = 0; a < 3; a++) {
-                for (int i = 0; i < 10000; i++) {
-                    for (int j = 0; j < 10000; j++) {
+            for (int a = 0; a < 2; a++) {
+                for (int i = 0; i < 8000; i++) {
+                    for (int j = 0; j < 8000; j++) {
                         if (dp[i] == 32000 && dp[j] == 32000) continue;
 
                         if (i+j <= 32000) {
@@ -62,9 +62,8 @@ class Solution {
                 k += 1;
             }
             
-            for (int a = 0; a < 3; a++) {
-                for (int i = 0; i < 10000; i++) {
-                    for (int j = 0; j < 10000; j++) {
+                for (int i = 0; i < 100; i++) {
+                    for (int j = 0; j < 100; j++) {
                         if (dp[i] == 32000 && dp[j] == 32000) continue;
 
                         if (i+j <= 32000) {
@@ -83,7 +82,6 @@ class Solution {
                         }
                     }
                 }
-            }
         }
              
         int answer = dp[number] > 8 ? -1 : dp[number];
