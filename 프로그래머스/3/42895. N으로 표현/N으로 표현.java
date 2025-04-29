@@ -1,90 +1,36 @@
 import java.util.*;
 
 class Solution {
-    
     public int solution(int N, int number) {
-        int[] dp = new int[32001];
-        Arrays.fill(dp, 32000);
+        if (N == number) return 1;
         
-        if (N != 1) {
-            dp[N] = 1;
-            dp[N - N] = 2; // 0
-            dp[N / N] = 2; // 1
-            dp[N + N] = 2;
-            dp[N * N] = 2;
-            
-            int temp = N * 10 + N;
-            int k = 2;
-            while (true) {
-                if (temp > 32000) {
-                    break;
-                }
-                dp[temp] = k; 
-                temp = temp * 10 + N;
-                k += 1;
-            }
-            
-            for (int a = 0; a < 2; a++) {
-                for (int i = 0; i < 8000; i++) {
-                    for (int j = 0; j < 8000; j++) {
-                        if (dp[i] == 32000 && dp[j] == 32000) continue;
-
-                        if (i+j <= 32000) {
-                            dp[i+j] = Math.min(dp[i+j], dp[i] + dp[j]);
-                        }           
-                        if (i-j >= 0) {
-                            dp[i-j] = Math.min(dp[i-j], dp[i] + dp[j]);
-                        }
-
-                        if (i*j <= 32000) {
-                            dp[i*j] = Math.min(dp[i*j], dp[i] + dp[j]);
-                        }
-
-                        if (i != 0 && j != 0) {
-                            dp[i/j] = Math.min(dp[i/j], dp[i] + dp[j]);
-                        }
-                    }
-                }
-            }
-        } else {
-            dp[N] = 1;
-            dp[N - N] = 2; // 0
-            dp[N + N] = 2;
-            
-            int temp = N * 10 + N;
-            int k = 2;
-            while (true) {
-                if (temp > 32000) {
-                    break;
-                }
-                dp[temp] = k; 
-                temp = temp * 10 + N;
-                k += 1;
-            }
-            
-                for (int i = 0; i < 100; i++) {
-                    for (int j = 0; j < 100; j++) {
-                        if (dp[i] == 32000 && dp[j] == 32000) continue;
-
-                        if (i+j <= 32000) {
-                            dp[i+j] = Math.min(dp[i+j], dp[i] + dp[j]);
-                        }           
-                        if (i-j >= 0) {
-                            dp[i-j] = Math.min(dp[i-j], dp[i] + dp[j]);
-                        }
-
-                        if (i*j <= 32000) {
-                            dp[i*j] = Math.min(dp[i*j], dp[i] + dp[j]);
-                        }
-
-                        if (i != 0 && j != 0) {
-                            dp[i/j] = Math.min(dp[i/j], dp[i] + dp[j]);
-                        }
-                    }
-                }
+        List<Set<Integer>> dp = new ArrayList<>();
+        for (int i = 0; i <= 8; i++) {
+            dp.add(new HashSet<>());
         }
-             
-        int answer = dp[number] > 8 ? -1 : dp[number];
-        return answer;
+        
+        int temp = N;
+        for (int i = 1; i <= 8; i++) {
+            dp.get(i).add(temp); // 5, 55, 555, 5555 처럼 이어붙인 수 추가
+            temp = temp * 10 + N;
+        }
+        
+        for (int i = 1; i <= 8; i++) {
+            for (int j = 1; j < i; j++) {
+                for (int a : dp.get(j)) {
+                    for (int b : dp.get(i - j)) {
+                        dp.get(i).add(a + b);
+                        dp.get(i).add(a - b);
+                        dp.get(i).add(a * b);
+                        if (b != 0) dp.get(i).add(a / b);
+                    }
+                }
+            }
+            if (dp.get(i).contains(number)) {
+                return i;
+            }
+        }
+        
+        return -1;
     }
 }
