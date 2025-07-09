@@ -5,7 +5,7 @@ public class Main {
     static int N;
     static int[] dist;
     static int[] cities;
-    static int ans;
+    static long ans;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -25,7 +25,7 @@ public class Main {
 
         int curi = 0;
         while (curi < N-1) {
-            int d = 1;
+            long d = 1;
 
             for (int i = curi + 1; i < N-1; i++) {
                 if (cities[curi] < cities[i]) {
@@ -36,7 +36,7 @@ public class Main {
             }
 
             for (int i = curi; i < curi + d; i++) {
-                ans += cities[curi] * dist[i];
+                ans += (long) cities[curi] * (long) dist[i];
             }
             curi += d;
         }
