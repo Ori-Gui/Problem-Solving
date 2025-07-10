@@ -2,17 +2,21 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
+    static int N;
+    static int[] requests;
+    static int max, sum;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int n = Integer.parseInt(br.readLine());
+        N = Integer.parseInt(br.readLine());
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        int[] requests = new int[n];
-        int max = 0;
-        int sum = 0;
+        requests = new int[N];
+        max = 0;
+        sum = 0;
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < N; i++) {
             requests[i] = Integer.parseInt(st.nextToken());
             sum += requests[i];
             max = Math.max(requests[i], max);
@@ -32,7 +36,7 @@ public class Main {
         while (l <= r) {
             int mid = (l + r) / 2;
             int total = 0;
-            for (int i = 0; i < n; i++) {
+            for (int i = 0; i < N; i++) {
                 total += Math.min(requests[i], mid);
             }
 
