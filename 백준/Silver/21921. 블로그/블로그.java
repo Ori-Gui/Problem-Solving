@@ -40,7 +40,7 @@ public class Main {
                 max = prefixSum[i];
                 cnt = 1;
             } else if (prefixSum[i] == max) {
-                cnt++;
+                cnt += 1;
             }
         }
         if (max == 0) {
