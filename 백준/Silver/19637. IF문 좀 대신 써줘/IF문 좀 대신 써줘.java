@@ -3,8 +3,7 @@ import java.util.*;
 
 public class Main {
     static int N, M;
-    static String[] titles;
-    static int[] limits;
+    static TreeMap<Integer,String> map;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -12,7 +11,7 @@ public class Main {
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
 
-        TreeMap<Integer,String> map = new TreeMap<>();
+        map = new TreeMap<>();
 
         for (int i = 0; i < N; i++) {
             st = new StringTokenizer(br.readLine());
