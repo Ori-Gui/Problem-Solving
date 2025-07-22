@@ -1,4 +1,3 @@
-// ChatGPT o3-mini-high
 #include <bits/stdc++.h>
 using namespace std;
  
@@ -140,7 +139,7 @@ long long Solve() {
     // 최종적으로, 접미사 i에서 기여하는 부분 문자열 수는: (sf.len - idx),
     //   idx = max( goods[j].first + goods[j].second - 1, i + sf.lcp[sf.rk[i]] ).
     long long ans = 0;
-    int j = 0;
+    size_t j = 0;
     for (int i = 0; i < sf.len; i++) {
         while (j < goods.size() && i > goods[j].first)
             j++;
