@@ -7,22 +7,32 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        S = br.readLine();
+        S = br.readLine().trim();
 
         for (int i = 0; i < S.length(); i++) {
-            cnt0 += S.charAt(i) == '0' ? 1 : 0;
-            cnt1 += S.charAt(i) == '1' ? 1 : 0;
+            if (S.charAt(i) == '0') {
+                cnt0 += 1;
+            } else {
+                cnt1 += 1;
+            }
         }
 
         cnt0 /= 2;
         cnt1 /= 2;
 
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < cnt0; i++) {
-            sb.append(0);
-        }
-        for (int i = 0; i < cnt1; i++) {
-            sb.append(1);
+        for (int i = 0; i < S.length(); i++) {
+            if (S.charAt(i) == '0') {
+                if (cnt0 > 0) {
+                    cnt0 -= 1;
+                    sb.append('0');
+                } 
+            } else {
+                if (cnt1 <= 0) {
+                    sb.append('1');
+                }
+                cnt1 -= 1;
+            }
         }
         System.out.println(sb);
     }
