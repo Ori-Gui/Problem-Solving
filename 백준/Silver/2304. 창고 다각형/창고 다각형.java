@@ -12,11 +12,6 @@ public class Main {
             this.l = l;
             this.h = h;
         }
-
-        @Override
-        public String toString() {
-            return "[" + l + ", " + h + "]";
-        }
     }
 
     public static void main(String[] args) throws IOException {
