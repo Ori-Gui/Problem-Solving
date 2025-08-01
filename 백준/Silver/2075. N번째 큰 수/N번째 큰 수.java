@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Main {
     static int N;
-    static List<Integer> list = new ArrayList<>();
+    static PriorityQueue<Integer> pq = new PriorityQueue<>(Comparator.reverseOrder());
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -12,10 +12,12 @@ public class Main {
         for (int i = 0; i < N; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
             for (int j = 0; j < N; j++) {
-                list.add(Integer.parseInt(st.nextToken()));
+                pq.offer(Integer.parseInt(st.nextToken()));
             }
         }
-        Collections.sort(list, Comparator.reverseOrder());
-        System.out.print(list.get(N - 1));
+        for (int i = 1; i < N; i++) {
+            pq.poll();
+        }
+        System.out.print(pq.poll());
     }
 }
