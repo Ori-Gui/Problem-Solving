@@ -8,7 +8,6 @@ public class Main {
     static String dfs(int start) {
         Stack<Integer> s = new Stack<>();
         boolean[] v = new boolean[N + 1];
-        List<Integer> result = new ArrayList<>();
         StringBuilder sb = new StringBuilder();
         s.push(start);
 
@@ -16,15 +15,12 @@ public class Main {
             int cur = s.pop();
             if (v[cur]) continue;
             v[cur] = true;
-            result.add(cur);
+            sb.append(cur).append(' ');
             List<Integer> nodes = edges.get(cur);
             for (int i = 0; i < nodes.size(); i++) {
                 if (v[nodes.get(i)]) continue;
                 s.push(nodes.get(i));
             }
-        }
-        for (int i = 0; i < result.size(); i++) {
-            sb.append(result.get(i)).append(' ');
         }
         return sb.toString();
     }
@@ -32,7 +28,6 @@ public class Main {
     static String bfs(int start) {
         Queue<Integer> q = new ArrayDeque<>();
         boolean[] v = new boolean[N + 1];
-        List<Integer> result = new ArrayList<>();
         StringBuilder sb = new StringBuilder();
         q.offer(start);
 
@@ -40,14 +35,11 @@ public class Main {
             int cur = q.poll();
             if (v[cur]) continue;
             v[cur] = true;
-            result.add(cur);
+            sb.append(cur).append(' ');
             List<Integer> nodes = edges.get(cur);
             for (int i = 0; i < nodes.size(); i++) {
                 q.offer(nodes.get(i));
             }
-        }
-        for (int i = 0; i < result.size(); i++) {
-            sb.append(result.get(i)).append(' ');
         }
         return sb.toString();
     }
