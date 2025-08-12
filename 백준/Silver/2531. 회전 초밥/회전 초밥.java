@@ -2,51 +2,55 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
+    static int n, d, k, c;
+    static int[] sushi;
+    static int[] count;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine().trim());
-        int n = Integer.parseInt(st.nextToken()); // 접시 수
-        int d = Integer.parseInt(st.nextToken()); // 초밥 가짓수
-        int k = Integer.parseInt(st.nextToken()); // 연속해서 먹는 접시의 수
-        int c = Integer.parseInt(st.nextToken()); // 쿠폰 초밥 번호
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        n = Integer.parseInt(st.nextToken()); // 접시 수
+        d = Integer.parseInt(st.nextToken()); // 초밥 가짓수
+        k = Integer.parseInt(st.nextToken()); // 연속해서 먹는 접시의 수
+        c = Integer.parseInt(st.nextToken()); // 쿠폰 초밥 번호
 
-        int[] sushi = new int[n];
+        sushi = new int[n];
         for (int i = 0; i < n; i++) {
-            sushi[i] = Integer.parseInt(br.readLine().trim());
+            sushi[i] = Integer.parseInt(br.readLine());
         }
         
-        int[] count = new int[d + 1];
-        int distinct = 0; // 현재 윈도우 내의 초밥 종류 개수
+        count = new int[d + 1];
+        int type = 0;
 
         for (int i = 0; i < k; i++) {
             if (count[sushi[i]] == 0) {
-                distinct++;
+                type += 1;
             }
-            count[sushi[i]]++;
+            count[sushi[i]] += 1;
         }
         
-        int max = distinct;
+        int max = type;
         if (count[c] == 0) {
-            max = distinct + 1;
+            max = type + 1;
         }
         
         for (int i = 0; i < n; i++) {
-            int removeIndex = i;
-            int addIndex = (i + k) % n;
+            int rmIdx = i;
+            int addIdx = (i + k) % n;
             
-            count[sushi[removeIndex]]--;
-            if (count[sushi[removeIndex]] == 0) {
-                distinct--;
+            count[sushi[rmIdx]] -= 1;
+            if (count[sushi[rmIdx]] == 0) {
+                type -= 1;
             }
-            
-            if (count[sushi[addIndex]] == 0) {
-                distinct++;
+            if (count[sushi[addIdx]] == 0) {
+                type += 1;
             }
-            count[sushi[addIndex]]++;
+
+            count[sushi[addIdx]] += 1;
             
-            int cur = distinct;
+            int cur = type;
             if (count[c] == 0) {
-                cur++;
+                cur += 1;
             }
             max = Math.max(max, cur);
         }
