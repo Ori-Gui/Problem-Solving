@@ -33,13 +33,8 @@ public class Main {
         v = new boolean[N + 1];
         f = new boolean[N + 1];
 
-        for (int i = 1; i <= N; i++) {
-            a[i] = Integer.parseInt(br.readLine());
-        }
-
-        for (int i = 1; i <= N; i++) {
-            dfs(i);
-        }
+        for (int i = 1; i <= N; i++) a[i] = Integer.parseInt(br.readLine());
+        for (int i = 1; i <= N; i++) dfs(i);
 
         Collections.sort(result);
 
