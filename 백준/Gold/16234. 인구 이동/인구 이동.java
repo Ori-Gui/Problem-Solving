@@ -1,3 +1,4 @@
+import java.io.*;
 import java.util.*;
 
 public class Main {
@@ -18,16 +19,18 @@ public class Main {
         }
     }
 
-    static int bfs(Land land, boolean[] v, List<Land> group) {
-        Deque<Land> deque = new ArrayDeque<>();
-        deque.add(land);
-        group.add(land);
-        v[land.x * N + land.y] = true;
+    static int bfs(int idx, boolean[] v, List<Integer> group) {
+        Deque<Integer> deque = new ArrayDeque<>();
+        deque.add(idx);
+        group.add(idx);
+        v[idx] = true;
 
-        int sumP = land.p;
+        int sumP = lands.get(idx).p;
 
         while (!deque.isEmpty()) {
-            Land curL = deque.poll();
+            int curI = deque.poll();
+            Land curL = lands.get(curI);
+
             for (int i = 0; i < 4; i++) {
                 int nx = curL.x + dx[i];
                 int ny = curL.y + dy[i];
@@ -39,9 +42,9 @@ public class Main {
 
                     if (diffP >= L && diffP <= R) {
                         v[ni] = true;
-                        deque.add(nextL);
-                        group.add(nextL);
-                        sumP += nextL.p;
+                        deque.add(ni);
+                        group.add(ni);
+                        sumP += lands.get(ni).p;
                     }
                 }
             }
@@ -49,19 +52,21 @@ public class Main {
         return sumP;
     }
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-        N = sc.nextInt();
-        L = sc.nextInt();
-        R = sc.nextInt();
+        N = Integer.parseInt(st.nextToken());
+        L = Integer.parseInt(st.nextToken());
+        R = Integer.parseInt(st.nextToken());
 
         lands = new ArrayList<>();
         days = 0;
 
         for (int i = 0; i < N; i++) {
+            st = new StringTokenizer(br.readLine());
             for (int j = 0; j < N; j++) {
-                lands.add(new Land(i, j, sc.nextInt()));
+                lands.add(new Land(i, j, Integer.parseInt(st.nextToken())));
             }
         }
 
@@ -71,16 +76,15 @@ public class Main {
 
             for (int i = 0; i < N * N; i++) {
                 if (!v[i]) {
-                    Land land = lands.get(i);
-                    List<Land> group = new ArrayList<>();
-                    int sumP = bfs(land, v, group);
+                    List<Integer> group = new ArrayList<>();
+                    int sumP = bfs(i, v, group);
 
                     if (group.size() >= 2) {
                         moveFlag = true;
                         int newP = sumP / group.size();
 
-                        for (Land l : group) {
-                            l.p = newP;
+                        for (int i2 : group) {
+                            lands.get(i2).p = newP;
                         }
                     }
                 }
