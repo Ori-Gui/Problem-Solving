@@ -8,8 +8,7 @@ public class Main {
 
     static String minOf(String a, String b) {
         if (a == null) return b;
-        if (b == null) return a;
-
+        
         if (a.length() != b.length()) {
             return a.length() < b.length() ? a : b;
         }
