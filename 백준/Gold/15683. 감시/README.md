@@ -4,15 +4,15 @@
 
 ### 성능 요약
 
-메모리: 85432 KB, 시간: 248 ms
+메모리: 30004 KB, 시간: 192 ms
 
 ### 분류
 
-백트래킹, 브루트포스 알고리즘, 구현, 시뮬레이션
+구현, 브루트포스 알고리즘, 시뮬레이션, 백트래킹
 
 ### 제출 일자
 
-2025년 3월 7일 17:22:53
+2025년 10월 9일 21:33:06
 
 ### 문제 설명
 
@@ -21,11 +21,11 @@
 <table class="table table table-bordered" style="width: 100%;">
 	<tbody>
 		<tr>
-			<td style="width: 20%; text-align: center; vertical-align: middle;"><img alt="" src="" style="width: 113px; height: 70px;"></td>
-			<td style="width: 20%; text-align: center;vertical-align: middle;"><img alt="" src="" style="width: 156px; height: 70px;"></td>
-			<td style="width: 20%; text-align: center;vertical-align: middle;"><img alt="" src="" style="width: 100px; height: 100px;"></td>
-			<td style="width: 20%; text-align: center;vertical-align: middle;"><img alt="" src="" style="width: 138px; height: 100px;"></td>
-			<td style="width: 20%; text-align: center;vertical-align: middle;"><img alt="" src="" style="width: 149px; height: 150px;"></td>
+			<td style="width: 20%; text-align: center; vertical-align: middle;"><img alt="" src="https://onlinejudgeimages.s3-ap-northeast-1.amazonaws.com/problem/15683/1.png" style="width: 113px; height: 70px;"></td>
+			<td style="width: 20%; text-align: center;vertical-align: middle;"><img alt="" src="https://onlinejudgeimages.s3-ap-northeast-1.amazonaws.com/problem/15683/2.png" style="width: 156px; height: 70px;"></td>
+			<td style="width: 20%; text-align: center;vertical-align: middle;"><img alt="" src="https://onlinejudgeimages.s3-ap-northeast-1.amazonaws.com/problem/15683/3.png" style="width: 100px; height: 100px;"></td>
+			<td style="width: 20%; text-align: center;vertical-align: middle;"><img alt="" src="https://onlinejudgeimages.s3-ap-northeast-1.amazonaws.com/problem/15683/4.png" style="width: 138px; height: 100px;"></td>
+			<td style="width: 20%; text-align: center;vertical-align: middle;"><img alt="" src="https://onlinejudgeimages.s3-ap-northeast-1.amazonaws.com/problem/15683/5.png" style="width: 149px; height: 150px;"></td>
 		</tr>
 		<tr>
 			<td style="width: 20%; text-align: center;">1번</td>

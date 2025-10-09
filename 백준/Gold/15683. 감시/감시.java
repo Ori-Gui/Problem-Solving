@@ -1,100 +1,113 @@
-import java.util.*;
 import java.io.*;
+import java.util.*;
 
 public class Main {
-    static int N, M;
-    static int map[][];
-    static int minV = Integer.MAX_VALUE;
-    // (우: 0, 하: 1, 좌: 2, 상: 3)
-    static int[] dx = { 0, 1, 0, -1 };
-    static int[] dy = { 1, 0, -1, 0 };
-    // (1번: 4, 2번: 2, 3번: 4, 4번: 4, 5번: 1)
-    static int[][][] dirs = {
+    static final int EMPTY = 0;
+    static final int WALL  = 6;
+    static final int SEEN  = 7;
+    static final int[] dx = {-1, 0, 1, 0};
+    static final int[] dy = { 0, 1, 0,-1};
+
+    // CCTV 타입별 가능한 방향 세트
+    // 1: 한 방향 / 2: 반대 두 방향 / 3: 직각 두 방향 / 4: 세 방향 / 5: 네 방향
+    static final int[][][] DIRS = {
             {},
-            { { 0 }, { 1 }, { 2 }, { 3 } },
-            { { 0, 2 }, { 1, 3 } },
-            { { 0, 3 }, { 0, 1 }, { 1, 2 }, { 2, 3 } },
-            { { 2, 3, 0 }, { 3, 0, 1 }, { 0, 1, 2 }, { 1, 2, 3 } },
-            { { 0, 1, 2, 3 } }
+            { {0}, {1}, {2}, {3} },
+            { {0,2}, {1,3} },
+            { {0,1}, {1,2}, {2,3}, {3,0} },
+            { {3,0,1}, {0,1,2}, {1,2,3}, {2,3,0} },
+            { {0,1,2,3} }
     };
 
-    static List<CCTV> cctvs;
+    static int N, M;
+    static int[][] board;
+    static List<CCTV> cams = new ArrayList<>();
+    static int best = Integer.MAX_VALUE;
 
     static class CCTV {
-        int x;
-        int y;
-        int type;
-
-        CCTV(int x, int y, int type) {
-            this.x = x;
-            this.y = y;
-            this.type = type;
+        int x, y, type;
+        CCTV(int x, int y, int type) { 
+            this.x = x; 
+            this.y = y; 
+            this.type = type; 
         }
     }
 
-    static void watch(int x, int y, int[][] map, int[] dir) {
-        for (int d : dir) {
+    // idx번째 CCTV 방향 정하기
+    static void dfs(int idx) {
+        if (idx == cams.size()) {
+            best = Math.min(best, countBlind());
+            return;
+        }
+
+        CCTV cam = cams.get(idx);
+        for (int[] dirs : DIRS[cam.type]) {
+            List<int[]> painted = new ArrayList<>();
+            watch(cam.x, cam.y, dirs, painted);
+            dfs(idx + 1);
+            undo(painted);
+        }
+    }
+
+    // 주어진 방향 세트로 감시선 쏘기. 새로 칠한 좌표를 painted에 기록
+    static void watch(int x, int y, int[] dirs, List<int[]> painted) {
+        for (int d : dirs) {
             int nx = x;
             int ny = y;
             while (true) {
                 nx += dx[d];
                 ny += dy[d];
-                if (nx < 0 || ny < 0 || nx >= N || ny >= M || map[nx][ny] == 6) {
-                    break;
-                }
-                if (map[nx][ny] == 0) {
-                    map[nx][ny] = 7;
+                if (!inBounds(nx, ny) || board[nx][ny] == WALL) break;
+
+                if (board[nx][ny] == EMPTY) {
+                    board[nx][ny] = SEEN;
+                    painted.add(new int[]{nx, ny});
                 }
             }
         }
     }
 
-    static void dfs(int idx, int[][] map) {
-        if (idx == cctvs.size()) {
-            int cnt = 0;
-            for (int i = 0; i < N; i++) {
-                for (int j = 0; j < M; j++) {
-                    if (map[i][j] == 0) {
-                        cnt += 1;
-                    }
-                }
-            }
-            minV = Math.min(minV, cnt);
-            return;
+    // 칠한 좌표들 원복
+    static void undo(List<int[]> painted) {
+        for (int[] p : painted) {
+            board[p[0]][p[1]] = EMPTY;
         }
+    }
 
-        CCTV cctv = cctvs.get(idx);
-
-        for (int[] dir : dirs[cctv.type]) {
-            int[][] copyMap = new int[N][M];
-            for (int i = 0; i < N; i++) {
-                copyMap[i] = map[i].clone();
+    static int countBlind() {
+        int cnt = 0;
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < M; j++) {
+                if (board[i][j] == EMPTY) cnt++;
             }
-            watch(cctv.x, cctv.y, copyMap, dir);
-            dfs(idx + 1, copyMap);
         }
+        return cnt;
+    }
 
+    static boolean inBounds(int x, int y) {
+        return 0 <= x && x < N && 0 <= y && y < M;
     }
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
+        StringTokenizer st;
 
+        st = new StringTokenizer(br.readLine());
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
-        map = new int[N][M];
-        cctvs = new ArrayList<>();
+        board = new int[N][M];
 
         for (int i = 0; i < N; i++) {
             st = new StringTokenizer(br.readLine());
             for (int j = 0; j < M; j++) {
-                map[i][j] = Integer.parseInt(st.nextToken());
-                if (map[i][j] > 0 && map[i][j] < 6) {
-                    cctvs.add(new CCTV(i, j, map[i][j]));
+                board[i][j] = Integer.parseInt(st.nextToken());
+                if (1 <= board[i][j] && board[i][j] <= 5) {
+                    cams.add(new CCTV(i, j, board[i][j]));
                 }
             }
         }
-        dfs(0, map);
-        System.out.println(minV);
+
+        dfs(0);
+        System.out.println(best);
     }
 }
