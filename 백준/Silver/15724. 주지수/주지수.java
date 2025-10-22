@@ -26,17 +26,17 @@ public class Main {
         K = Integer.parseInt(br.readLine());
 
         for (int x = 1; x <= N; x++) {
-                for (int y = 1; y <= M; y++) {
-                    dp[x][y] = map[x][y] + dp[x-1][y];
-                }
+            for (int y = 1; y <= M; y++) {
+                dp[x][y] = map[x][y] + dp[x-1][y];
             }
+        }
 
         for (int x = 1; x <= N; x++) {
             for (int y = 1; y <= M; y++) {
                 dp[x][y] += dp[x][y-1];
             }
         }
-        
+
         for (int k = 0; k < K; k++) {
             st = new StringTokenizer(br.readLine());
             int x1 = Integer.parseInt(st.nextToken());
