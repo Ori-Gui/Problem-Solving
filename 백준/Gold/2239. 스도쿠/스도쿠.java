@@ -30,7 +30,7 @@ public class Main {
             box[b] |= bit;
 
             if (dfs(k + 1)) return true;
-
+            
             row[r] ^= bit;
             col[c] ^= bit;
             box[b] ^= bit;
@@ -63,7 +63,9 @@ public class Main {
 
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < 9; i++) {
-            for (int j = 0; j < 9; j++) sb.append(a[i][j]);
+            for (int j = 0; j < 9; j++) {
+                sb.append(a[i][j]);
+            }
             sb.append('\n');
         }
         System.out.print(sb.toString());
