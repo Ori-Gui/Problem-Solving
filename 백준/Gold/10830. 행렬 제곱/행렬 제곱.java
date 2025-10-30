@@ -6,16 +6,11 @@ public class Main {
     static long B;
     
     static int[][] pow(int[][] A, long e) {
-        int[][] B = new int[N][N];
-        for (int i = 0; i < N; i++) {
-            System.arraycopy(A[i], 0, B[i], 0, N);
-        }
-        if (e == 1) {
-            return B;
-        }
+        if (e == 1) return A;
+
         int[][] half = pow(A, e / 2);
         int[][] res = mul(half, half);
-        if ((e & 1L) == 1L) res = mul(res, A);
+        if (e % 2 == 1) res = mul(res, A);
         return res;
     }
 
@@ -24,13 +19,12 @@ public class Main {
         for (int i = 0; i < N; i++) {
             for (int k = 0; k < N; k++) {
                 for (int j = 0; j < N; j++) {
-                    Z[i][j] = (int)((Z[i][j] + (long) X[i][k] * Y[k][j]) % 1000);
+                    Z[i][j] = (int) (((long) X[i][k] * Y[k][j] + Z[i][j]) % 1000);
                 }
             }
         }
         return Z;
     }
-
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -51,8 +45,7 @@ public class Main {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
-                sb.append(ans[i][j]);
-                if (j + 1 < N) sb.append(' ');
+                sb.append(ans[i][j]).append(' ');
             }
             sb.append('\n');
         }
