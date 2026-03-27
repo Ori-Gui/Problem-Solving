@@ -4,8 +4,6 @@
 ---
 
 <!-- AA-README-START -->
-## 📚 Problem Solving
-
 ---
 ## 📚 백준
 ### 🥉 Bronze
