@@ -1,8 +1,5 @@
 # 🐣AA (Algorithm Archive)
-- BaekjoonHub를 활용해 백준, 프로그래머스, SWEA 풀이를 GitHub에 자동 업로드하여 관리
-
----
-
+> Problem Solving Record | BaekjoonHub를 활용해 `백준`, `프로그래머스`, `SWEA` 풀이를 GitHub에 자동 업로드하여 관리
 <!-- AA-README-START -->
 ---
 ## 📚 백준
