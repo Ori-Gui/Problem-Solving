@@ -1,37 +1,42 @@
-name: Update readme # GitHub Actions 탭에서 확인할 수 있는 액션 이름
+# // .github/workflows/update-readme.yml
+name: Update readme
 
-on: # jobs가 실행되어야 하는 상황 정의
+on:
   push:
-    branches: [ "main" ] # main 브랜치에 push가 발생했을 때
-  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
 
 permissions:
   contents: write
 
-jobs: # 실제 실행될 내용
+jobs:
   build:
-    runs-on: ubuntu-latest # 빌드 환경
+    runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v3 # checkout
-    - name: Set up Python 3.10 
-      uses: actions/setup-python@v3 # setup-python
-      with:
-        python-version: "3.10" # 3.10버전 파이썬 사용
-    - name: Install dependencies # 1) 스크립트에 필요한 dependency 설치
-      run: |
-        python -m pip install --upgrade pip
-        pip install python-leetcode 
-    - name: Run update.py # 2) update.py 실행
-      run: |
-        python update.py
-    - name: Commit changes # 3) 추가된 파일 commit
-      run: |
-        git config --global user.name 'Ori-Gui' # 유저명
-        git config --global user.email 'dign552@naver.com' # 유저 이메일
-        git add -A
-        git commit -am "auto update README.md" # 커밋 메시지
-    - name: Push changes # 4) 메인에 푸시
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        git push
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+
+      - name: Run update.py
+        run: |
+          python update.py
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "Ori-Gui"
+          git config --global user.email "dign552@naver.com"
+          git add README.md
+          git diff --cached --quiet || git commit -m "auto update README.md"
+
+      - name: Push changes
+        run: |
+          git push
