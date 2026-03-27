@@ -28,9 +28,16 @@ def get_platform_title(main_cat: str) -> str:
     return PLATFORM_TITLES.get(main_cat, main_cat)
 
 
+def is_unrated(sub_cat: str) -> bool:
+    return sub_cat.strip().lower() == "unrated"
+
+
 def get_tier_title(main_cat: str, sub_cat: str) -> str:
+    if is_unrated(sub_cat):
+        return "◼️ unrated"
+
     if main_cat == "백준":
-        return BOJ_TIER_ORDER.get(sub_cat, f"❎ {sub_cat}")
+        return BOJ_TIER_ORDER.get(sub_cat, f"◻️ {sub_cat}")
     if main_cat == "프로그래머스":
         return f"🔶 Lv.{sub_cat}"
     if main_cat == "SWEA":
