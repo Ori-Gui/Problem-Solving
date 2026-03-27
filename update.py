@@ -8,10 +8,6 @@ README_PATH = "README.md"
 START_MARKER = "<!-- AA-README-START -->"
 END_MARKER = "<!-- AA-README-END -->"
 
-GENERATED_HEADER = """
-## 📚 Problem Solving
-"""
-
 BOJ_TIER_ORDER = {
     "Bronze": "🥉 Bronze",
     "Silver": "🥈 Silver",
@@ -54,7 +50,7 @@ def extract_problem_number(folder_name: str):
 
 
 def build_generated_content() -> str:
-    content = GENERATED_HEADER + "\n"
+    content = "\n"
 
     main_categories = ["백준", "프로그래머스", "SWEA"]
     data = {}
