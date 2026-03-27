@@ -1,4 +1,4 @@
-# update.py
+# // update.py
 #!/usr/bin/env python3
 
 import os
@@ -9,26 +9,33 @@ START_MARKER = "<!-- AA-README-START -->"
 END_MARKER = "<!-- AA-README-END -->"
 
 BOJ_TIER_ORDER = {
-    "Bronze": "🥉 Bronze",
-    "Silver": "🥈 Silver",
-    "Gold": "🥇 Gold",
-    "Platinum": "🍏 Platinum",
-    "Diamond": "💎 Diamond",
-    "Ruby": "❤️ Ruby"
+    "Bronze": "🟤 Bronze",
+    "Silver": "⚪ Silver",
+    "Gold": "🟡 Gold",
+    "Platinum": "🟢 Platinum",
+    "Diamond": "🔵 Diamond",
+    "Ruby": "🔴 Ruby",
 }
 
-PROGRAMMERS_LEVEL = {
-    "0": "🍼 Lv.0",
-    "1": "🐣 Lv.1",
-    "2": "🐥 Lv.2",
-    "3": "🐤 Lv.3",
-    "4": "🦉 Lv.4",
-    "5": "🦅 Lv.5"
+PLATFORM_TITLES = {
+    "백준": "📗 백준",
+    "프로그래머스": "📙 프로그래머스",
+    "SWEA": "📘 SWEA",
 }
 
 
-def swea_label(name: str) -> str:
-    return f"⭐ {name.upper()}"
+def get_platform_title(main_cat: str) -> str:
+    return PLATFORM_TITLES.get(main_cat, main_cat)
+
+
+def get_tier_title(main_cat: str, sub_cat: str) -> str:
+    if main_cat == "백준":
+        return BOJ_TIER_ORDER.get(sub_cat, f"❎ {sub_cat}")
+    if main_cat == "프로그래머스":
+        return f"🔶 Lv.{sub_cat}"
+    if main_cat == "SWEA":
+        return f"🔷 {sub_cat.upper()}"
+    return sub_cat
 
 
 def parse_problem_folder(folder_name: str) -> str:
@@ -43,7 +50,7 @@ def parse_problem_folder(folder_name: str) -> str:
 def extract_problem_number(folder_name: str):
     if "." in folder_name:
         try:
-            return int(folder_name.split(".")[0].strip())
+            return int(folder_name.split(".", 1)[0].strip())
         except ValueError:
             return float("inf")
     return float("inf")
@@ -98,13 +105,13 @@ def build_generated_content() -> str:
             continue
 
         content += "---\n"
-        content += f"## 📚 {main_cat}\n"
+        content += f"## {get_platform_title(main_cat)}\n"
 
         if main_cat == "백준":
             order = ["Bronze", "Silver", "Gold", "Platinum", "Diamond", "Ruby"]
             keys_sorted = sorted(
                 keys,
-                key=lambda item: order.index(item[0][1]) if item[0][1] in order else 999
+                key=lambda item: order.index(item[0][1]) if item[0][1] in order else 999,
             )
         else:
             keys_sorted = sorted(keys, key=lambda x: x[0][1])
@@ -113,14 +120,7 @@ def build_generated_content() -> str:
             if sub_cat == ".":
                 continue
 
-            if mc == "백준":
-                tier_title = BOJ_TIER_ORDER.get(sub_cat, f"✅ {sub_cat}")
-            elif mc == "프로그래머스":
-                tier_title = PROGRAMMERS_LEVEL.get(sub_cat, f"📘 Lv.{sub_cat}")
-            elif mc == "SWEA":
-                tier_title = swea_label(sub_cat)
-            else:
-                tier_title = sub_cat
+            tier_title = get_tier_title(mc, sub_cat)
 
             content += f"### {tier_title}\n"
             content += "| 문제 | 링크 |\n"
