@@ -205,7 +205,7 @@ def render_problem_table(problem_items: list[dict]) -> str:
 
     for item in sorted(problem_items, key=lambda x: extract_problem_number(x["folder"])):
         parsed_name = parse_problem_folder(item["folder"])
-        link = parse.quote(item["path"])
+        link = parse.quote(item["path"], safe="/")
         lines.append(f"| {parsed_name} | [링크]({link}) |")
 
     lines.append("")
@@ -227,14 +227,13 @@ def render_tier_details(main_cat: str, sub_cat: str, problem_items: list[dict]) 
     return "\n".join(lines)
 
 
-def render_platform_details(main_cat: str, grouped_data: dict, sorted_keys: list[str]) -> str:
+def render_platform_section(main_cat: str, grouped_data: dict, sorted_keys: list[str]) -> str:
     total_count = sum(len(grouped_data[key]) for key in sorted_keys if key in grouped_data)
     title = get_platform_title(main_cat)
 
     lines = []
     lines.append("---")
-    lines.append("<details>")
-    lines.append(f"<summary><b>{title}</b> ({total_count})</summary>")
+    lines.append(f"### {title} ({total_count})")
     lines.append("")
 
     for key in sorted_keys:
@@ -243,7 +242,6 @@ def render_platform_details(main_cat: str, grouped_data: dict, sorted_keys: list
             continue
         lines.append(render_tier_details(main_cat, key, problems))
 
-    lines.append("</details>")
     lines.append("")
 
     return "\n".join(lines)
@@ -259,19 +257,19 @@ def build_generated_content() -> str:
             boj_data.keys(),
             key=lambda x: BOJ_TIER_ORDER.index(x) if x in BOJ_TIER_ORDER else 999,
         )
-        parts.append(render_platform_details("백준", boj_data, sorted_boj_keys))
+        parts.append(render_platform_section("백준", boj_data, sorted_boj_keys))
 
     # 2) 프로그래머스
     programmers_data = build_other_platform_data("프로그래머스")
     if programmers_data:
         sorted_programmers_keys = sorted(programmers_data.keys(), key=sort_programmers_key)
-        parts.append(render_platform_details("프로그래머스", programmers_data, sorted_programmers_keys))
+        parts.append(render_platform_section("프로그래머스", programmers_data, sorted_programmers_keys))
 
     # 3) SWEA
     swea_data = build_other_platform_data("SWEA")
     if swea_data:
         sorted_swea_keys = sorted(swea_data.keys(), key=sort_swea_key)
-        parts.append(render_platform_details("SWEA", swea_data, sorted_swea_keys))
+        parts.append(render_platform_section("SWEA", swea_data, sorted_swea_keys))
 
     return "\n".join(parts).strip() + "\n"
 
