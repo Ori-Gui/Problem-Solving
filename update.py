@@ -148,7 +148,10 @@ def build_boj_data():
             if tier not in data:
                 data[tier] = []
 
-            data[tier].append(problem_folder)
+            data[tier].append({
+                "folder": problem_folder,
+                "path": problem_path,
+            })
 
     return data
 
@@ -171,7 +174,10 @@ def build_other_platform_data(main_cat: str):
         for problem_folder in os.listdir(sub_cat_path):
             problem_path = os.path.join(sub_cat_path, problem_folder)
             if os.path.isdir(problem_path):
-                data[sub_cat].append(problem_folder)
+                data[sub_cat].append({
+                    "folder": problem_folder,
+                    "path": problem_path,
+                })
 
     return data
 
@@ -191,92 +197,83 @@ def sort_swea_key(value: str):
         return 999
 
 
+def render_problem_table(problem_items: list[dict]) -> str:
+    lines = []
+    lines.append("")
+    lines.append("| 문제 | 링크 |")
+    lines.append("| ----- | ---- |")
+
+    for item in sorted(problem_items, key=lambda x: extract_problem_number(x["folder"])):
+        parsed_name = parse_problem_folder(item["folder"])
+        link = parse.quote(item["path"])
+        lines.append(f"| {parsed_name} | [링크]({link}) |")
+
+    lines.append("")
+    return "\n".join(lines)
+
+
+def render_tier_details(main_cat: str, sub_cat: str, problem_items: list[dict]) -> str:
+    title = get_tier_title(main_cat, sub_cat)
+    count = len(problem_items)
+
+    lines = []
+    lines.append("<details>")
+    lines.append(f"<summary><b>{title}</b> ({count})</summary>")
+    lines.append("")
+    lines.append(render_problem_table(problem_items))
+    lines.append("</details>")
+    lines.append("")
+
+    return "\n".join(lines)
+
+
+def render_platform_details(main_cat: str, grouped_data: dict, sorted_keys: list[str]) -> str:
+    total_count = sum(len(grouped_data[key]) for key in sorted_keys if key in grouped_data)
+    title = get_platform_title(main_cat)
+
+    lines = []
+    lines.append("---")
+    lines.append("<details>")
+    lines.append(f"<summary><b>{title}</b> ({total_count})</summary>")
+    lines.append("")
+
+    for key in sorted_keys:
+        problems = grouped_data.get(key, [])
+        if not problems:
+            continue
+        lines.append(render_tier_details(main_cat, key, problems))
+
+    lines.append("</details>")
+    lines.append("")
+
+    return "\n".join(lines)
+
+
 def build_generated_content() -> str:
-    content = "\n"
+    parts = []
 
     # 1) 백준
     boj_data = build_boj_data()
     if boj_data:
-        content += "---\n"
-        content += f"## {get_platform_title('백준')}\n"
-
         sorted_boj_keys = sorted(
             boj_data.keys(),
             key=lambda x: BOJ_TIER_ORDER.index(x) if x in BOJ_TIER_ORDER else 999,
         )
-
-        for tier in sorted_boj_keys:
-            problems = boj_data[tier]
-            if not problems:
-                continue
-
-            content += f"### {get_tier_title('백준', tier)}\n"
-            content += "| 문제 | 링크 |\n"
-            content += "| ----- | ---- |\n"
-
-            # 실제 링크 경로는 기존 폴더 구조를 따라가야 하므로,
-            # 문제가 어느 상위 폴더(Bronze/Gold/...)에 있는지 다시 찾아서 링크를 생성한다.
-            for pfolder in sorted(problems, key=extract_problem_number):
-                found_path = None
-                for major_dir in os.listdir(os.path.join(".", "백준")):
-                    candidate = os.path.join(".", "백준", major_dir, pfolder)
-                    if os.path.isdir(candidate):
-                        found_path = candidate
-                        break
-
-                if found_path is None:
-                    continue
-
-                parsed_name = parse_problem_folder(pfolder)
-                content += f"| {parsed_name} | [링크]({parse.quote(found_path)}) |\n"
-
-            content += "\n"
+        parts.append(render_platform_details("백준", boj_data, sorted_boj_keys))
 
     # 2) 프로그래머스
     programmers_data = build_other_platform_data("프로그래머스")
     if programmers_data:
-        content += "---\n"
-        content += f"## {get_platform_title('프로그래머스')}\n"
-
-        for sub_cat in sorted(programmers_data.keys(), key=sort_programmers_key):
-            problems = programmers_data[sub_cat]
-            if not problems:
-                continue
-
-            content += f"### {get_tier_title('프로그래머스', sub_cat)}\n"
-            content += "| 문제 | 링크 |\n"
-            content += "| ----- | ---- |\n"
-
-            for pfolder in sorted(problems, key=extract_problem_number):
-                parsed_name = parse_problem_folder(pfolder)
-                folder_path = os.path.join(".", "프로그래머스", sub_cat, pfolder)
-                content += f"| {parsed_name} | [링크]({parse.quote(folder_path)}) |\n"
-
-            content += "\n"
+        sorted_programmers_keys = sorted(programmers_data.keys(), key=sort_programmers_key)
+        parts.append(render_platform_details("프로그래머스", programmers_data, sorted_programmers_keys))
 
     # 3) SWEA
     swea_data = build_other_platform_data("SWEA")
     if swea_data:
-        content += "---\n"
-        content += f"## {get_platform_title('SWEA')}\n"
+        sorted_swea_keys = sorted(swea_data.keys(), key=sort_swea_key)
+        parts.append(render_platform_details("SWEA", swea_data, sorted_swea_keys))
 
-        for sub_cat in sorted(swea_data.keys(), key=sort_swea_key):
-            problems = swea_data[sub_cat]
-            if not problems:
-                continue
-
-            content += f"### {get_tier_title('SWEA', sub_cat)}\n"
-            content += "| 문제 | 링크 |\n"
-            content += "| ----- | ---- |\n"
-
-            for pfolder in sorted(problems, key=extract_problem_number):
-                parsed_name = parse_problem_folder(pfolder)
-                folder_path = os.path.join(".", "SWEA", sub_cat, pfolder)
-                content += f"| {parsed_name} | [링크]({parse.quote(folder_path)}) |\n"
-
-            content += "\n"
-
-    return content.strip() + "\n"
+    return "\n".join(parts).strip() + "\n"
 
 
 def update_readme():
