@@ -2,8 +2,13 @@
 > Problem Solving Record | BaekjoonHub를 활용해 `백준`, `프로그래머스`, `SWEA` 풀이를 GitHub에 자동 업로드하여 관리
 <!-- AA-README-START -->
 ---
-## 📗 백준
-### 🟤 Bronze V
+<details>
+<summary><b>📗 백준</b> (344)</summary>
+
+<details>
+<summary><b>🟤 Bronze V</b> (47)</summary>
+
+
 | 문제 | 링크 |
 | ----- | ---- |
 | 1000 - A＋B | [링크](./%EB%B0%B1%EC%A4%80/Bronze/1000.%E2%80%85A%EF%BC%8BB) |
@@ -54,7 +59,12 @@
 | 25083 - 새싹 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/25083.%E2%80%85%EC%83%88%EC%8B%B9) |
 | 27866 - 문자와 문자열 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/27866.%E2%80%85%EB%AC%B8%EC%9E%90%EC%99%80%E2%80%85%EB%AC%B8%EC%9E%90%EC%97%B4) |
 
-### 🟤 Bronze IV
+</details>
+
+<details>
+<summary><b>🟤 Bronze IV</b> (20)</summary>
+
+
 | 문제 | 링크 |
 | ----- | ---- |
 | 1264 - 모음의 개수 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/1264.%E2%80%85%EB%AA%A8%EC%9D%8C%EC%9D%98%E2%80%85%EA%B0%9C%EC%88%98) |
@@ -78,7 +88,12 @@
 | 11720 - 숫자의 합 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/11720.%E2%80%85%EC%88%AB%EC%9E%90%EC%9D%98%E2%80%85%ED%95%A9) |
 | 15552 - 빠른 A＋B | [링크](./%EB%B0%B1%EC%A4%80/Bronze/15552.%E2%80%85%EB%B9%A0%EB%A5%B8%E2%80%85A%EF%BC%8BB) |
 
-### 🟤 Bronze III
+</details>
+
+<details>
+<summary><b>🟤 Bronze III</b> (22)</summary>
+
+
 | 문제 | 링크 |
 | ----- | ---- |
 | 1085 - 직사각형에서 탈출 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/1085.%E2%80%85%EC%A7%81%EC%82%AC%EA%B0%81%ED%98%95%EC%97%90%EC%84%9C%E2%80%85%ED%83%88%EC%B6%9C) |
@@ -104,7 +119,12 @@
 | 15894 - 수학은 체육과목 입니다 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/15894.%E2%80%85%EC%88%98%ED%95%99%EC%9D%80%E2%80%85%EC%B2%B4%EC%9C%A1%EA%B3%BC%EB%AA%A9%E2%80%85%EC%9E%85%EB%8B%88%EB%8B%A4) |
 | 23971 - ZOAC 4 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/23971.%E2%80%85ZOAC%E2%80%854) |
 
-### 🟤 Bronze II
+</details>
+
+<details>
+<summary><b>🟤 Bronze II</b> (26)</summary>
+
+
 | 문제 | 링크 |
 | ----- | ---- |
 | 1009 - 분산처리 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/1009.%E2%80%85%EB%B6%84%EC%82%B0%EC%B2%98%EB%A6%AC) |
@@ -134,7 +154,12 @@
 | 15596 - 정수 N개의 합 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/15596.%E2%80%85%EC%A0%95%EC%88%98%E2%80%85N%EA%B0%9C%EC%9D%98%E2%80%85%ED%95%A9) |
 | 15829 - Hashing | [링크](./%EB%B0%B1%EC%A4%80/Bronze/15829.%E2%80%85Hashing) |
 
-### 🟤 Bronze I
+</details>
+
+<details>
+<summary><b>🟤 Bronze I</b> (13)</summary>
+
+
 | 문제 | 링크 |
 | ----- | ---- |
 | 1110 - 더하기 사이클 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/1110.%E2%80%85%EB%8D%94%ED%95%98%EA%B8%B0%E2%80%85%EC%82%AC%EC%9D%B4%ED%81%B4) |
@@ -151,7 +176,12 @@
 | 10989 - 수 정렬하기 3 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/10989.%E2%80%85%EC%88%98%E2%80%85%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0%E2%80%853) |
 | 11050 - 이항 계수 1 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/11050.%E2%80%85%EC%9D%B4%ED%95%AD%E2%80%85%EA%B3%84%EC%88%98%E2%80%851) |
 
-### ⚪ Silver V
+</details>
+
+<details>
+<summary><b>⚪ Silver V</b> (39)</summary>
+
+
 | 문제 | 링크 |
 | ----- | ---- |
 | 1010 - 다리 놓기 | [링크](./%EB%B0%B1%EC%A4%80/Silver/1010.%E2%80%85%EB%8B%A4%EB%A6%AC%E2%80%85%EB%86%93%EA%B8%B0) |
@@ -194,7 +224,12 @@
 | 11723 - 집합 | [링크](./%EB%B0%B1%EC%A4%80/Silver/11723.%E2%80%85%EC%A7%91%ED%95%A9) |
 | 14916 - 거스름돈 | [링크](./%EB%B0%B1%EC%A4%80/Silver/14916.%E2%80%85%EA%B1%B0%EC%8A%A4%EB%A6%84%EB%8F%88) |
 
-### ⚪ Silver IV
+</details>
+
+<details>
+<summary><b>⚪ Silver IV</b> (22)</summary>
+
+
 | 문제 | 링크 |
 | ----- | ---- |
 | 1018 - 체스판 다시 칠하기 | [링크](./%EB%B0%B1%EC%A4%80/Silver/1018.%E2%80%85%EC%B2%B4%EC%8A%A4%ED%8C%90%E2%80%85%EB%8B%A4%EC%8B%9C%E2%80%85%EC%B9%A0%ED%95%98%EA%B8%B0) |
@@ -220,7 +255,12 @@
 | 17219 - 비밀번호 찾기 | [링크](./%EB%B0%B1%EC%A4%80/Silver/17219.%E2%80%85%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8%E2%80%85%EC%B0%BE%EA%B8%B0) |
 | 18110 - solved．ac | [링크](./%EB%B0%B1%EC%A4%80/Silver/18110.%E2%80%85solved%EF%BC%8Eac) |
 
-### ⚪ Silver III
+</details>
+
+<details>
+<summary><b>⚪ Silver III</b> (31)</summary>
+
+
 | 문제 | 링크 |
 | ----- | ---- |
 | 1002 - 터렛 | [링크](./%EB%B0%B1%EC%A4%80/Silver/1002.%E2%80%85%ED%84%B0%EB%A0%9B) |
@@ -255,7 +295,12 @@
 | 21921 - 블로그 | [링크](./%EB%B0%B1%EC%A4%80/Silver/21921.%E2%80%85%EB%B8%94%EB%A1%9C%EA%B7%B8) |
 | 22233 - 가희와 키워드 | [링크](./%EB%B0%B1%EC%A4%80/Silver/22233.%E2%80%85%EA%B0%80%ED%9D%AC%EC%99%80%E2%80%85%ED%82%A4%EC%9B%8C%EB%93%9C) |
 
-### ⚪ Silver II
+</details>
+
+<details>
+<summary><b>⚪ Silver II</b> (24)</summary>
+
+
 | 문제 | 링크 |
 | ----- | ---- |
 | 1012 - 유기농 배추 | [링크](./%EB%B0%B1%EC%A4%80/Silver/1012.%E2%80%85%EC%9C%A0%EA%B8%B0%EB%86%8D%E2%80%85%EB%B0%B0%EC%B6%94) |
@@ -283,7 +328,12 @@
 | 20006 - 랭킹전 대기열 | [링크](./%EB%B0%B1%EC%A4%80/Silver/20006.%E2%80%85%EB%9E%AD%ED%82%B9%EC%A0%84%E2%80%85%EB%8C%80%EA%B8%B0%EC%97%B4) |
 | 21736 - 헌내기는 친구가 필요해 | [링크](./%EB%B0%B1%EC%A4%80/Silver/21736.%E2%80%85%ED%97%8C%EB%82%B4%EA%B8%B0%EB%8A%94%E2%80%85%EC%B9%9C%EA%B5%AC%EA%B0%80%E2%80%85%ED%95%84%EC%9A%94%ED%95%B4) |
 
-### ⚪ Silver I
+</details>
+
+<details>
+<summary><b>⚪ Silver I</b> (18)</summary>
+
+
 | 문제 | 링크 |
 | ----- | ---- |
 | 1283 - 단축키 지정 | [링크](./%EB%B0%B1%EC%A4%80/Silver/1283.%E2%80%85%EB%8B%A8%EC%B6%95%ED%82%A4%E2%80%85%EC%A7%80%EC%A0%95) |
@@ -305,7 +355,12 @@
 | 17615 - 볼 모으기 | [링크](./%EB%B0%B1%EC%A4%80/Silver/17615.%E2%80%85%EB%B3%BC%E2%80%85%EB%AA%A8%EC%9C%BC%EA%B8%B0) |
 | 20922 - 겹치는 건 싫어 | [링크](./%EB%B0%B1%EC%A4%80/Silver/20922.%E2%80%85%EA%B2%B9%EC%B9%98%EB%8A%94%E2%80%85%EA%B1%B4%E2%80%85%EC%8B%AB%EC%96%B4) |
 
-### 🟡 Gold V
+</details>
+
+<details>
+<summary><b>🟡 Gold V</b> (33)</summary>
+
+
 | 문제 | 링크 |
 | ----- | ---- |
 | 1025 - 제곱수 찾기 | [링크](./%EB%B0%B1%EC%A4%80/Gold/1025.%E2%80%85%EC%A0%9C%EA%B3%B1%EC%88%98%E2%80%85%EC%B0%BE%EA%B8%B0) |
@@ -342,7 +397,12 @@
 | 20437 - 문자열 게임 2 | [링크](./%EB%B0%B1%EC%A4%80/Gold/20437.%E2%80%85%EB%AC%B8%EC%9E%90%EC%97%B4%E2%80%85%EA%B2%8C%EC%9E%84%E2%80%852) |
 | 22251 - 빌런 호석 | [링크](./%EB%B0%B1%EC%A4%80/Gold/22251.%E2%80%85%EB%B9%8C%EB%9F%B0%E2%80%85%ED%98%B8%EC%84%9D) |
 
-### 🟡 Gold IV
+</details>
+
+<details>
+<summary><b>🟡 Gold IV</b> (26)</summary>
+
+
 | 문제 | 링크 |
 | ----- | ---- |
 | 1027 - 고층 건물 | [링크](./%EB%B0%B1%EC%A4%80/Gold/1027.%E2%80%85%EA%B3%A0%EC%B8%B5%E2%80%85%EA%B1%B4%EB%AC%BC) |
@@ -372,7 +432,12 @@
 | 17406 - 배열 돌리기 4 | [링크](./%EB%B0%B1%EC%A4%80/Gold/17406.%E2%80%85%EB%B0%B0%EC%97%B4%E2%80%85%EB%8F%8C%EB%A6%AC%EA%B8%B0%E2%80%854) |
 | 21939 - 문제 추천 시스템 Version 1 | [링크](./%EB%B0%B1%EC%A4%80/Gold/21939.%E2%80%85%EB%AC%B8%EC%A0%9C%E2%80%85%EC%B6%94%EC%B2%9C%E2%80%85%EC%8B%9C%EC%8A%A4%ED%85%9C%E2%80%85Version%E2%80%851) |
 
-### 🟡 Gold III
+</details>
+
+<details>
+<summary><b>🟡 Gold III</b> (11)</summary>
+
+
 | 문제 | 링크 |
 | ----- | ---- |
 | 1238 - 파티 | [링크](./%EB%B0%B1%EC%A4%80/Gold/1238.%E2%80%85%ED%8C%8C%ED%8B%B0) |
@@ -387,7 +452,12 @@
 | 22866 - 탑 보기 | [링크](./%EB%B0%B1%EC%A4%80/Gold/22866.%E2%80%85%ED%83%91%E2%80%85%EB%B3%B4%EA%B8%B0) |
 | 24337 - 가희와 탑 | [링크](./%EB%B0%B1%EC%A4%80/Gold/24337.%E2%80%85%EA%B0%80%ED%9D%AC%EC%99%80%E2%80%85%ED%83%91) |
 
-### 🟡 Gold II
+</details>
+
+<details>
+<summary><b>🟡 Gold II</b> (6)</summary>
+
+
 | 문제 | 링크 |
 | ----- | ---- |
 | 1202 - 보석 도둑 | [링크](./%EB%B0%B1%EC%A4%80/Gold/1202.%E2%80%85%EB%B3%B4%EC%84%9D%E2%80%85%EB%8F%84%EB%91%91) |
@@ -397,17 +467,32 @@
 | 3687 - 성냥개비 | [링크](./%EB%B0%B1%EC%A4%80/Gold/3687.%E2%80%85%EC%84%B1%EB%83%A5%EA%B0%9C%EB%B9%84) |
 | 9527 - 1의 개수 세기 | [링크](./%EB%B0%B1%EC%A4%80/Gold/9527.%E2%80%851%EC%9D%98%E2%80%85%EA%B0%9C%EC%88%98%E2%80%85%EC%84%B8%EA%B8%B0) |
 
-### 🟢 Platinum V
+</details>
+
+<details>
+<summary><b>🟢 Platinum V</b> (1)</summary>
+
+
 | 문제 | 링크 |
 | ----- | ---- |
 | 1028 - 다이아몬드 광산 | [링크](./%EB%B0%B1%EC%A4%80/Platinum/1028.%E2%80%85%EB%8B%A4%EC%9D%B4%EC%95%84%EB%AA%AC%EB%93%9C%E2%80%85%EA%B4%91%EC%82%B0) |
 
-### 🔵 Diamond V
+</details>
+
+<details>
+<summary><b>🔵 Diamond V</b> (1)</summary>
+
+
 | 문제 | 링크 |
 | ----- | ---- |
 | 25564 - 역삼역 | [링크](./%EB%B0%B1%EC%A4%80/Diamond/25564.%E2%80%85%EC%97%AD%EC%82%BC%EC%97%AD) |
 
-### ◼️ Unrated
+</details>
+
+<details>
+<summary><b>◼️ Unrated</b> (4)</summary>
+
+
 | 문제 | 링크 |
 | ----- | ---- |
 | 1237 - 정ㅋ벅ㅋ | [링크](./%EB%B0%B1%EC%A4%80/Unrated/1237.%E2%80%85%EC%A0%95%E3%85%8B%EB%B2%85%E3%85%8B) |
@@ -415,9 +500,18 @@
 | 15802 - 타노스 | [링크](./%EB%B0%B1%EC%A4%80/Unrated/15802.%E2%80%85%ED%83%80%EB%85%B8%EC%8A%A4) |
 | 17113 - 3분 그래프 | [링크](./%EB%B0%B1%EC%A4%80/Unrated/17113.%E2%80%853%EB%B6%84%E2%80%85%EA%B7%B8%EB%9E%98%ED%94%84) |
 
+</details>
+
+</details>
+
 ---
-## 📙 프로그래머스
-### 🔶 Lv.0
+<details>
+<summary><b>📙 프로그래머스</b> (79)</summary>
+
+<details>
+<summary><b>🔶 Lv.0</b> (59)</summary>
+
+
 | 문제 | 링크 |
 | ----- | ---- |
 | 120583 - 중복된 숫자 개수 | [링크](./%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/0/120583.%E2%80%85%EC%A4%91%EB%B3%B5%EB%90%9C%E2%80%85%EC%88%AB%EC%9E%90%E2%80%85%EA%B0%9C%EC%88%98) |
@@ -480,12 +574,22 @@
 | 120956 - 옹알이 （1） | [링크](./%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/0/120956.%E2%80%85%EC%98%B9%EC%95%8C%EC%9D%B4%E2%80%85%EF%BC%881%EF%BC%89) |
 | 181952 - 문자열 출력하기 | [링크](./%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/0/181952.%E2%80%85%EB%AC%B8%EC%9E%90%EC%97%B4%E2%80%85%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0) |
 
-### 🔶 Lv.1
+</details>
+
+<details>
+<summary><b>🔶 Lv.1</b> (1)</summary>
+
+
 | 문제 | 링크 |
 | ----- | ---- |
 | 118666 - 성격 유형 검사하기 | [링크](./%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/1/118666.%E2%80%85%EC%84%B1%EA%B2%A9%E2%80%85%EC%9C%A0%ED%98%95%E2%80%85%EA%B2%80%EC%82%AC%ED%95%98%EA%B8%B0) |
 
-### 🔶 Lv.2
+</details>
+
+<details>
+<summary><b>🔶 Lv.2</b> (5)</summary>
+
+
 | 문제 | 링크 |
 | ----- | ---- |
 | 1844 - 게임 맵 최단거리 | [링크](./%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/2/1844.%E2%80%85%EA%B2%8C%EC%9E%84%E2%80%85%EB%A7%B5%E2%80%85%EC%B5%9C%EB%8B%A8%EA%B1%B0%EB%A6%AC) |
@@ -494,7 +598,12 @@
 | 258711 - 도넛과 막대 그래프 | [링크](./%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/2/258711.%E2%80%85%EB%8F%84%EB%84%9B%EA%B3%BC%E2%80%85%EB%A7%89%EB%8C%80%E2%80%85%EA%B7%B8%EB%9E%98%ED%94%84) |
 | 340212 - ［PCCP 기출문제］ 2번 ／ 퍼즐 게임 챌린지 | [링크](./%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/2/340212.%E2%80%85%EF%BC%BBPCCP%E2%80%85%EA%B8%B0%EC%B6%9C%EB%AC%B8%EC%A0%9C%EF%BC%BD%E2%80%852%EB%B2%88%E2%80%85%EF%BC%8F%E2%80%85%ED%8D%BC%EC%A6%90%E2%80%85%EA%B2%8C%EC%9E%84%E2%80%85%EC%B1%8C%EB%A6%B0%EC%A7%80) |
 
-### 🔶 Lv.3
+</details>
+
+<details>
+<summary><b>🔶 Lv.3</b> (12)</summary>
+
+
 | 문제 | 링크 |
 | ----- | ---- |
 | 1837 - GPS | [링크](./%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/3/1837.%E2%80%85GPS) |
@@ -510,22 +619,41 @@
 | 214288 - 상담원 인원 | [링크](./%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/3/214288.%E2%80%85%EC%83%81%EB%8B%B4%EC%9B%90%E2%80%85%EC%9D%B8%EC%9B%90) |
 | 388354 - 홀짝트리 | [링크](./%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/3/388354.%E2%80%85%ED%99%80%EC%A7%9D%ED%8A%B8%EB%A6%AC) |
 
-### 🔶 Lv.4
+</details>
+
+<details>
+<summary><b>🔶 Lv.4</b> (2)</summary>
+
+
 | 문제 | 링크 |
 | ----- | ---- |
 | 42897 - 도둑질 | [링크](./%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/4/42897.%E2%80%85%EB%8F%84%EB%91%91%EC%A7%88) |
 | 67260 - ［카카오 인턴］ 동굴 탐험 | [링크](./%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/4/67260.%E2%80%85%EF%BC%BB%EC%B9%B4%EC%B9%B4%EC%98%A4%E2%80%85%EC%9D%B8%ED%84%B4%EF%BC%BD%E2%80%85%EB%8F%99%EA%B5%B4%E2%80%85%ED%83%90%ED%97%98) |
 
+</details>
+
+</details>
+
 ---
-## 📘 SWEA
-### 🔷 D1
+<details>
+<summary><b>📘 SWEA</b> (31)</summary>
+
+<details>
+<summary><b>🔷 D1</b> (3)</summary>
+
+
 | 문제 | 링크 |
 | ----- | ---- |
 | 1936 - 1대1 가위바위보 | [링크](./SWEA/D1/1936.%E2%80%851%EB%8C%801%E2%80%85%EA%B0%80%EC%9C%84%EB%B0%94%EC%9C%84%EB%B3%B4) |
 | 2058 - 자릿수 더하기 | [링크](./SWEA/D1/2058.%E2%80%85%EC%9E%90%EB%A6%BF%EC%88%98%E2%80%85%EB%8D%94%ED%95%98%EA%B8%B0) |
 | 2063 - 중간값 찾기 | [링크](./SWEA/D1/2063.%E2%80%85%EC%A4%91%EA%B0%84%EA%B0%92%E2%80%85%EC%B0%BE%EA%B8%B0) |
 
-### 🔷 D2
+</details>
+
+<details>
+<summary><b>🔷 D2</b> (4)</summary>
+
+
 | 문제 | 링크 |
 | ----- | ---- |
 | 1954 - 달팽이 숫자 | [링크](./SWEA/D2/1954.%E2%80%85%EB%8B%AC%ED%8C%BD%EC%9D%B4%E2%80%85%EC%88%AB%EC%9E%90) |
@@ -533,7 +661,12 @@
 | 12712 - 파리퇴치3 | [링크](./SWEA/D2/12712.%E2%80%85%ED%8C%8C%EB%A6%AC%ED%87%B4%EC%B9%983) |
 | 14510 - 나무 높이 | [링크](./SWEA/D2/14510.%E2%80%85%EB%82%98%EB%AC%B4%E2%80%85%EB%86%92%EC%9D%B4) |
 
-### 🔷 D3
+</details>
+
+<details>
+<summary><b>🔷 D3</b> (4)</summary>
+
+
 | 문제 | 링크 |
 | ----- | ---- |
 | 1225 - ［S／W 문제해결 기본］ 7일차 － 암호생성기 | [링크](./SWEA/D3/1225.%E2%80%85%EF%BC%BBS%EF%BC%8FW%E2%80%85%EB%AC%B8%EC%A0%9C%ED%95%B4%EA%B2%B0%E2%80%85%EA%B8%B0%EB%B3%B8%EF%BC%BD%E2%80%857%EC%9D%BC%EC%B0%A8%E2%80%85%EF%BC%8D%E2%80%85%EC%95%94%ED%98%B8%EC%83%9D%EC%84%B1%EA%B8%B0) |
@@ -541,7 +674,12 @@
 | 5215 - 햄버거 다이어트 | [링크](./SWEA/D3/5215.%E2%80%85%ED%96%84%EB%B2%84%EA%B1%B0%E2%80%85%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8) |
 | 6808 - 규영이와 인영이의 카드게임 | [링크](./SWEA/D3/6808.%E2%80%85%EA%B7%9C%EC%98%81%EC%9D%B4%EC%99%80%E2%80%85%EC%9D%B8%EC%98%81%EC%9D%B4%EC%9D%98%E2%80%85%EC%B9%B4%EB%93%9C%EA%B2%8C%EC%9E%84) |
 
-### 🔷 D4
+</details>
+
+<details>
+<summary><b>🔷 D4</b> (9)</summary>
+
+
 | 문제 | 링크 |
 | ----- | ---- |
 | 1210 - ［S／W 문제해결 기본］ 2일차 － Ladder1 | [링크](./SWEA/D4/1210.%E2%80%85%EF%BC%BBS%EF%BC%8FW%E2%80%85%EB%AC%B8%EC%A0%9C%ED%95%B4%EA%B2%B0%E2%80%85%EA%B8%B0%EB%B3%B8%EF%BC%BD%E2%80%852%EC%9D%BC%EC%B0%A8%E2%80%85%EF%BC%8D%E2%80%85Ladder1) |
@@ -554,17 +692,32 @@
 | 7699 - 수지의 수지 맞는 여행 | [링크](./SWEA/D4/7699.%E2%80%85%EC%88%98%EC%A7%80%EC%9D%98%E2%80%85%EC%88%98%EC%A7%80%E2%80%85%EB%A7%9E%EB%8A%94%E2%80%85%EC%97%AC%ED%96%89) |
 | 7733 - 치즈 도둑 | [링크](./SWEA/D4/7733.%E2%80%85%EC%B9%98%EC%A6%88%E2%80%85%EB%8F%84%EB%91%91) |
 
-### 🔷 D5
+</details>
+
+<details>
+<summary><b>🔷 D5</b> (1)</summary>
+
+
 | 문제 | 링크 |
 | ----- | ---- |
 | 3421 - 수제 버거 장인 | [링크](./SWEA/D5/3421.%E2%80%85%EC%88%98%EC%A0%9C%E2%80%85%EB%B2%84%EA%B1%B0%E2%80%85%EC%9E%A5%EC%9D%B8) |
 
-### 🔷 D6
+</details>
+
+<details>
+<summary><b>🔷 D6</b> (1)</summary>
+
+
 | 문제 | 링크 |
 | ----- | ---- |
 | 1263 - ［S／W 문제해결 응용］ 8일차 － 사람 네트워크2 | [링크](./SWEA/D6/1263.%E2%80%85%EF%BC%BBS%EF%BC%8FW%E2%80%85%EB%AC%B8%EC%A0%9C%ED%95%B4%EA%B2%B0%E2%80%85%EC%9D%91%EC%9A%A9%EF%BC%BD%E2%80%858%EC%9D%BC%EC%B0%A8%E2%80%85%EF%BC%8D%E2%80%85%EC%82%AC%EB%9E%8C%E2%80%85%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC2) |
 
-### ◼️ Unrated
+</details>
+
+<details>
+<summary><b>◼️ Unrated</b> (9)</summary>
+
+
 | 문제 | 링크 |
 | ----- | ---- |
 | 1767 - ［SW Test 샘플문제］ 프로세서 연결하기 | [링크](./SWEA/Unrated/1767.%E2%80%85%EF%BC%BBSW%E2%80%85Test%E2%80%85%EC%83%98%ED%94%8C%EB%AC%B8%EC%A0%9C%EF%BC%BD%E2%80%85%ED%94%84%EB%A1%9C%EC%84%B8%EC%84%9C%E2%80%85%EC%97%B0%EA%B2%B0%ED%95%98%EA%B8%B0) |
@@ -576,4 +729,8 @@
 | 5650 - ［모의 SW 역량테스트］ 핀볼 게임 | [링크](./SWEA/Unrated/5650.%E2%80%85%EF%BC%BB%EB%AA%A8%EC%9D%98%E2%80%85SW%E2%80%85%EC%97%AD%EB%9F%89%ED%85%8C%EC%8A%A4%ED%8A%B8%EF%BC%BD%E2%80%85%ED%95%80%EB%B3%BC%E2%80%85%EA%B2%8C%EC%9E%84) |
 | 5653 - ［모의 SW 역량테스트］ 줄기세포배양 | [링크](./SWEA/Unrated/5653.%E2%80%85%EF%BC%BB%EB%AA%A8%EC%9D%98%E2%80%85SW%E2%80%85%EC%97%AD%EB%9F%89%ED%85%8C%EC%8A%A4%ED%8A%B8%EF%BC%BD%E2%80%85%EC%A4%84%EA%B8%B0%EC%84%B8%ED%8F%AC%EB%B0%B0%EC%96%91) |
 | 5656 - ［모의 SW 역량테스트］ 벽돌 깨기 | [링크](./SWEA/Unrated/5656.%E2%80%85%EF%BC%BB%EB%AA%A8%EC%9D%98%E2%80%85SW%E2%80%85%EC%97%AD%EB%9F%89%ED%85%8C%EC%8A%A4%ED%8A%B8%EF%BC%BD%E2%80%85%EB%B2%BD%EB%8F%8C%E2%80%85%EA%B9%A8%EA%B8%B0) |
+
+</details>
+
+</details>
 <!-- AA-README-END -->
