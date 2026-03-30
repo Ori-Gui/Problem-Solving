@@ -2,8 +2,7 @@
 > Problem Solving Record | BaekjoonHub를 활용해 `백준`, `프로그래머스`, `SWEA` 풀이를 GitHub에 자동 업로드하여 관리
 <!-- AA-README-START -->
 ---
-<details>
-<summary><b>📗 백준</b> (344)</summary>
+### 📗 백준 (344)
 
 <details>
 <summary><b>🟤 Bronze V</b> (47)</summary>
@@ -502,11 +501,9 @@
 
 </details>
 
-</details>
 
 ---
-<details>
-<summary><b>📙 프로그래머스</b> (79)</summary>
+### 📙 프로그래머스 (79)
 
 <details>
 <summary><b>🔶 Lv.0</b> (59)</summary>
@@ -632,11 +629,9 @@
 
 </details>
 
-</details>
 
 ---
-<details>
-<summary><b>📘 SWEA</b> (31)</summary>
+### 📘 SWEA (31)
 
 <details>
 <summary><b>🔷 D1</b> (3)</summary>
@@ -729,8 +724,6 @@
 | 5650 - ［모의 SW 역량테스트］ 핀볼 게임 | [링크](./SWEA/Unrated/5650.%E2%80%85%EF%BC%BB%EB%AA%A8%EC%9D%98%E2%80%85SW%E2%80%85%EC%97%AD%EB%9F%89%ED%85%8C%EC%8A%A4%ED%8A%B8%EF%BC%BD%E2%80%85%ED%95%80%EB%B3%BC%E2%80%85%EA%B2%8C%EC%9E%84) |
 | 5653 - ［모의 SW 역량테스트］ 줄기세포배양 | [링크](./SWEA/Unrated/5653.%E2%80%85%EF%BC%BB%EB%AA%A8%EC%9D%98%E2%80%85SW%E2%80%85%EC%97%AD%EB%9F%89%ED%85%8C%EC%8A%A4%ED%8A%B8%EF%BC%BD%E2%80%85%EC%A4%84%EA%B8%B0%EC%84%B8%ED%8F%AC%EB%B0%B0%EC%96%91) |
 | 5656 - ［모의 SW 역량테스트］ 벽돌 깨기 | [링크](./SWEA/Unrated/5656.%E2%80%85%EF%BC%BB%EB%AA%A8%EC%9D%98%E2%80%85SW%E2%80%85%EC%97%AD%EB%9F%89%ED%85%8C%EC%8A%A4%ED%8A%B8%EF%BC%BD%E2%80%85%EB%B2%BD%EB%8F%8C%E2%80%85%EA%B9%A8%EA%B8%B0) |
-
-</details>
 
 </details>
 <!-- AA-README-END -->
