@@ -2,7 +2,7 @@
 > Problem Solving Record | BaekjoonHub를 활용해 `백준`, `프로그래머스`, `SWEA` 풀이를 GitHub에 자동 업로드하여 관리
 <!-- AA-README-START -->
 ---
-### 📗 백준 (344)
+### 📗 백준 (345)
 
 <details>
 <summary><b>🟤 Bronze V</b> (47)</summary>
@@ -330,7 +330,7 @@
 </details>
 
 <details>
-<summary><b>⚪ Silver I</b> (18)</summary>
+<summary><b>⚪ Silver I</b> (19)</summary>
 
 
 | 문제 | 링크 |
@@ -348,6 +348,7 @@
 | 2531 - 회전 초밥 | [링크](./%EB%B0%B1%EC%A4%80/Silver/2531.%E2%80%85%ED%9A%8C%EC%A0%84%E2%80%85%EC%B4%88%EB%B0%A5) |
 | 2615 - 오목 | [링크](./%EB%B0%B1%EC%A4%80/Silver/2615.%E2%80%85%EC%98%A4%EB%AA%A9) |
 | 2667 - 단지번호붙이기 | [링크](./%EB%B0%B1%EC%A4%80/Silver/2667.%E2%80%85%EB%8B%A8%EC%A7%80%EB%B2%88%ED%98%B8%EB%B6%99%EC%9D%B4%EA%B8%B0) |
+| 6236 - 용돈 관리 | [링크](./%EB%B0%B1%EC%A4%80/Silver/6236.%E2%80%85%EC%9A%A9%EB%8F%88%E2%80%85%EA%B4%80%EB%A6%AC) |
 | 14888 - 연산자 끼워넣기 | [링크](./%EB%B0%B1%EC%A4%80/Silver/14888.%E2%80%85%EC%97%B0%EC%82%B0%EC%9E%90%E2%80%85%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0) |
 | 14940 - 쉬운 최단거리 | [링크](./%EB%B0%B1%EC%A4%80/Silver/14940.%E2%80%85%EC%89%AC%EC%9A%B4%E2%80%85%EC%B5%9C%EB%8B%A8%EA%B1%B0%EB%A6%AC) |
 | 15724 - 주지수 | [링크](./%EB%B0%B1%EC%A4%80/Silver/15724.%E2%80%85%EC%A3%BC%EC%A7%80%EC%88%98) |
