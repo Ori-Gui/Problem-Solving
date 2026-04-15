@@ -710,14 +710,15 @@
 </details>
 
 ---
-### 📙 구름레벨 (1)
+### 📙 구름레벨 (2)
 
 <details>
-<summary><b>☁️ level</b> (1)</summary>
+<summary><b>☁️ level</b> (2)</summary>
 
 | 문제 | 링크 |
 | ----- | ---- |
 | 1 - 헷갈리는 작대기 | [링크](./goormlevel/47882/1.%E2%80%85%ED%97%B7%EA%B0%88%EB%A6%AC%EB%8A%94%E2%80%85%EC%9E%91%EB%8C%80%EA%B8%B0) |
+| 1 - 최소 연산으로 배열 정렬하기 | [링크](./goormlevel/349550/1.%E2%80%85%EC%B5%9C%EC%86%8C%E2%80%85%EC%97%B0%EC%82%B0%EC%9C%BC%EB%A1%9C%E2%80%85%EB%B0%B0%EC%97%B4%E2%80%85%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0) |
 
 </details>
 
