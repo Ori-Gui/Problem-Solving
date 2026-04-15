@@ -3,7 +3,7 @@
 
 <!-- AA-README-START -->
 ---
-### 📗 백준 (348)
+### 📗 백준 (349)
 
 <details>
 <summary><b>🟤 Bronze V</b> (48)</summary>
@@ -293,7 +293,7 @@
 </details>
 
 <details>
-<summary><b>⚪ Silver II</b> (24)</summary>
+<summary><b>⚪ Silver II</b> (25)</summary>
 
 | 문제 | 링크 |
 | ----- | ---- |
@@ -311,6 +311,7 @@
 | 2630 - 색종이 만들기 | [링크](./%EB%B0%B1%EC%A4%80/Silver/2630.%E2%80%85%EC%83%89%EC%A2%85%EC%9D%B4%E2%80%85%EB%A7%8C%EB%93%A4%EA%B8%B0) |
 | 2805 - 나무 자르기 | [링크](./%EB%B0%B1%EC%A4%80/Silver/2805.%E2%80%85%EB%82%98%EB%AC%B4%E2%80%85%EC%9E%90%EB%A5%B4%EA%B8%B0) |
 | 3758 - KCPC | [링크](./%EB%B0%B1%EC%A4%80/Silver/3758.%E2%80%85KCPC) |
+| 4963 - 섬의 개수 | [링크](./%EB%B0%B1%EC%A4%80/Silver/4963.%E2%80%85%EC%84%AC%EC%9D%98%E2%80%85%EA%B0%9C%EC%88%98) |
 | 5567 - 결혼식 | [링크](./%EB%B0%B1%EC%A4%80/Silver/5567.%E2%80%85%EA%B2%B0%ED%98%BC%EC%8B%9D) |
 | 11053 - 가장 긴 증가하는 부분 수열 | [링크](./%EB%B0%B1%EC%A4%80/Silver/11053.%E2%80%85%EA%B0%80%EC%9E%A5%E2%80%85%EA%B8%B4%E2%80%85%EC%A6%9D%EA%B0%80%ED%95%98%EB%8A%94%E2%80%85%EB%B6%80%EB%B6%84%E2%80%85%EC%88%98%EC%97%B4) |
 | 11279 - 최대 힙 | [링크](./%EB%B0%B1%EC%A4%80/Silver/11279.%E2%80%85%EC%B5%9C%EB%8C%80%E2%80%85%ED%9E%99) |
