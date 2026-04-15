@@ -6,13 +6,14 @@ import re
 from urllib import parse
 
 README_PATH = "README.md"
-START_MARKER = "<!-- AA-README-START -->"
-END_MARKER = "<!-- AA-README-END -->"
+START_MARKER = ""
+END_MARKER = ""
 
 PLATFORM_TITLES = {
     "백준": "📗 백준",
     "프로그래머스": "📙 프로그래머스",
     "SWEA": "📘 SWEA",
+    "goormlevel": "☁️ 구름레벨",
 }
 
 BOJ_TIER_ORDER = [
@@ -85,12 +86,19 @@ def extract_problem_number(folder_name: str):
 def get_tier_title(main_cat: str, sub_cat: str) -> str:
     if main_cat == "백준":
         return BOJ_TIER_LABELS.get(sub_cat, f"◻️ {sub_cat}")
-    if sub_cat.strip().lower() == "unrated":
+    
+    if sub_cat.strip().lower() == "unrated" or sub_cat.strip().lower() == "undefined":
+        if main_cat == "goormlevel":
+            return "☁️ 레벨 미상 (Undefined)"
         return "◼️ Unrated"
+        
     if main_cat == "프로그래머스":
         return f"🔶 Lv.{sub_cat}"
     if main_cat == "SWEA":
         return f"🔷 {sub_cat.upper()}"
+    if main_cat == "goormlevel":
+        return f"☁️ Lv.{sub_cat}"
+        
     return sub_cat
 
 
@@ -196,6 +204,14 @@ def sort_swea_key(value: str):
     except ValueError:
         return 999
 
+def sort_goorm_key(value: str):
+    if value.lower() in ["undefined", "unrated"]:
+        return (999, value)
+    try:
+        return (0, int(value))
+    except ValueError:
+        return (1, value)
+
 
 def render_problem_table(problem_items: list[dict]) -> str:
     lines = []
@@ -270,6 +286,12 @@ def build_generated_content() -> str:
     if swea_data:
         sorted_swea_keys = sorted(swea_data.keys(), key=sort_swea_key)
         parts.append(render_platform_section("SWEA", swea_data, sorted_swea_keys))
+        
+    # 4) 구름레벨 (추가됨)
+    goorm_data = build_other_platform_data("goormlevel")
+    if goorm_data:
+        sorted_goorm_keys = sorted(goorm_data.keys(), key=sort_goorm_key)
+        parts.append(render_platform_section("goormlevel", goorm_data, sorted_goorm_keys))
 
     return "\n".join(parts).strip() + "\n"
 
