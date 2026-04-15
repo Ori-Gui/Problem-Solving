@@ -487,7 +487,7 @@
 </details>
 
 ---
-### 📕 프로그래머스 (160)
+### 📕 프로그래머스 (161)
 
 <details>
 <summary><b>🔶 Lv.0</b> (59)</summary>
@@ -557,11 +557,12 @@
 </details>
 
 <details>
-<summary><b>🔶 Lv.1</b> (1)</summary>
+<summary><b>🔶 Lv.1</b> (2)</summary>
 
 | 문제 | 링크 |
 | ----- | ---- |
 | 118666 - 성격 유형 검사하기 | [링크](./%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/1/118666.%E2%80%85%EC%84%B1%EA%B2%A9%E2%80%85%EC%9C%A0%ED%98%95%E2%80%85%EA%B2%80%EC%82%AC%ED%95%98%EA%B8%B0) |
+| 293259 - 잡은 물고기의 평균 길이 구하기 | [링크](./%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/1/293259.%E2%80%85%EC%9E%A1%EC%9D%80%E2%80%85%EB%AC%BC%EA%B3%A0%EA%B8%B0%EC%9D%98%E2%80%85%ED%8F%89%EA%B7%A0%E2%80%85%EA%B8%B8%EC%9D%B4%E2%80%85%EA%B5%AC%ED%95%98%EA%B8%B0) |
 
 </details>
 
