@@ -3,7 +3,7 @@
 
 <!-- AA-README-START -->
 ---
-### 📗 백준 (346)
+### 📗 백준 (347)
 
 <details>
 <summary><b>🟤 Bronze V</b> (48)</summary>
@@ -119,7 +119,7 @@
 </details>
 
 <details>
-<summary><b>🟤 Bronze II</b> (26)</summary>
+<summary><b>🟤 Bronze II</b> (27)</summary>
 
 | 문제 | 링크 |
 | ----- | ---- |
@@ -136,6 +136,7 @@
 | 2355 - 시그마 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/2355.%E2%80%85%EC%8B%9C%EA%B7%B8%EB%A7%88) |
 | 2577 - 숫자의 개수 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/2577.%E2%80%85%EC%88%AB%EC%9E%90%EC%9D%98%E2%80%85%EA%B0%9C%EC%88%98) |
 | 2581 - 소수 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/2581.%E2%80%85%EC%86%8C%EC%88%98) |
+| 2675 - 문자열 반복 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/2675.%E2%80%85%EB%AC%B8%EC%9E%90%EC%97%B4%E2%80%85%EB%B0%98%EB%B3%B5) |
 | 2745 - 진법 변환 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/2745.%E2%80%85%EC%A7%84%EB%B2%95%E2%80%85%EB%B3%80%ED%99%98) |
 | 2750 - 수 정렬하기 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/2750.%E2%80%85%EC%88%98%E2%80%85%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0) |
 | 2798 - 블랙잭 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/2798.%E2%80%85%EB%B8%94%EB%9E%99%EC%9E%AD) |
