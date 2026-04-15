@@ -613,7 +613,7 @@
 </details>
 
 ---
-### 📘 SWEA (31)
+### 📘 SWEA (32)
 
 <details>
 <summary><b>🔷 D1</b> (3)</summary>
@@ -639,11 +639,12 @@
 </details>
 
 <details>
-<summary><b>🔷 D3</b> (4)</summary>
+<summary><b>🔷 D3</b> (5)</summary>
 
 | 문제 | 링크 |
 | ----- | ---- |
 | 1225 - ［S／W 문제해결 기본］ 7일차 － 암호생성기 | [링크](./SWEA/D3/1225.%E2%80%85%EF%BC%BBS%EF%BC%8FW%E2%80%85%EB%AC%B8%EC%A0%9C%ED%95%B4%EA%B2%B0%E2%80%85%EA%B8%B0%EB%B3%B8%EF%BC%BD%E2%80%857%EC%9D%BC%EC%B0%A8%E2%80%85%EF%BC%8D%E2%80%85%EC%95%94%ED%98%B8%EC%83%9D%EC%84%B1%EA%B8%B0) |
+| 3282 - 0／1 Knapsack | [링크](./SWEA/D3/3282.%E2%80%850%EF%BC%8F1%E2%80%85Knapsack) |
 | 3307 - 최장 증가 부분 수열 | [링크](./SWEA/D3/3307.%E2%80%85%EC%B5%9C%EC%9E%A5%E2%80%85%EC%A6%9D%EA%B0%80%E2%80%85%EB%B6%80%EB%B6%84%E2%80%85%EC%88%98%EC%97%B4) |
 | 5215 - 햄버거 다이어트 | [링크](./SWEA/D3/5215.%E2%80%85%ED%96%84%EB%B2%84%EA%B1%B0%E2%80%85%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8) |
 | 6808 - 규영이와 인영이의 카드게임 | [링크](./SWEA/D3/6808.%E2%80%85%EA%B7%9C%EC%98%81%EC%9D%B4%EC%99%80%E2%80%85%EC%9D%B8%EC%98%81%EC%9D%B4%EC%9D%98%E2%80%85%EC%B9%B4%EB%93%9C%EA%B2%8C%EC%9E%84) |
