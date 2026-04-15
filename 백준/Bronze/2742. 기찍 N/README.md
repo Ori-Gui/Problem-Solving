@@ -1,4 +1,4 @@
-# [Bronze IV] 기찍 N - 2742 
+# [Bronze V] 기찍 N - 2742 
 
 [문제 링크](https://www.acmicpc.net/problem/2742) 
 
