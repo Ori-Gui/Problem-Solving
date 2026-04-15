@@ -702,7 +702,7 @@
 ### 📙 구름레벨 (1)
 
 <details>
-<summary><b>☁️ Lv.47882</b> (1)</summary>
+<summary><b>☁️ level</b> (1)</summary>
 
 | 문제 | 링크 |
 | ----- | ---- |
