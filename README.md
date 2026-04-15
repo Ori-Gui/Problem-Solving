@@ -3,7 +3,7 @@
 
 <!-- AA-README-START -->
 ---
-### 📗 백준 (347)
+### 📗 백준 (348)
 
 <details>
 <summary><b>🟤 Bronze V</b> (48)</summary>
@@ -89,7 +89,7 @@
 </details>
 
 <details>
-<summary><b>🟤 Bronze III</b> (22)</summary>
+<summary><b>🟤 Bronze III</b> (23)</summary>
 
 | 문제 | 링크 |
 | ----- | ---- |
@@ -99,6 +99,7 @@
 | 2525 - 오븐 시계 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/2525.%E2%80%85%EC%98%A4%EB%B8%90%E2%80%85%EC%8B%9C%EA%B3%84) |
 | 2562 - 최댓값 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/2562.%E2%80%85%EC%B5%9C%EB%8C%93%EA%B0%92) |
 | 2588 - 곱셈 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/2588.%E2%80%85%EA%B3%B1%EC%85%88) |
+| 2738 - 행렬 덧셈 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/2738.%E2%80%85%ED%96%89%EB%A0%AC%E2%80%85%EB%8D%A7%EC%85%88) |
 | 2754 - 학점계산 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/2754.%E2%80%85%ED%95%99%EC%A0%90%EA%B3%84%EC%82%B0) |
 | 2884 - 알람 시계 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/2884.%E2%80%85%EC%95%8C%EB%9E%8C%E2%80%85%EC%8B%9C%EA%B3%84) |
 | 2914 - 저작권 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/2914.%E2%80%85%EC%A0%80%EC%9E%91%EA%B6%8C) |
