@@ -6,7 +6,7 @@
 ### 📗 백준 (345)
 
 <details>
-<summary><b>🟤 Bronze V</b> (47)</summary>
+<summary><b>🟤 Bronze V</b> (48)</summary>
 
 | 문제 | 링크 |
 | ----- | ---- |
@@ -24,6 +24,7 @@
 | 2558 - A＋B － 2 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/2558.%E2%80%85A%EF%BC%8BB%E2%80%85%EF%BC%8D%E2%80%852) |
 | 2739 - 구구단 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/2739.%E2%80%85%EA%B5%AC%EA%B5%AC%EB%8B%A8) |
 | 2741 - N 찍기 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/2741.%E2%80%85N%E2%80%85%EC%B0%8D%EA%B8%B0) |
+| 2742 - 기찍 N | [링크](./%EB%B0%B1%EC%A4%80/Bronze/2742.%E2%80%85%EA%B8%B0%EC%B0%8D%E2%80%85N) |
 | 2743 - 단어 길이 재기 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/2743.%E2%80%85%EB%8B%A8%EC%96%B4%E2%80%85%EA%B8%B8%EC%9D%B4%E2%80%85%EC%9E%AC%EA%B8%B0) |
 | 2744 - 대소문자 바꾸기 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/2744.%E2%80%85%EB%8C%80%EC%86%8C%EB%AC%B8%EC%9E%90%E2%80%85%EB%B0%94%EA%BE%B8%EA%B8%B0) |
 | 2753 - 윤년 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/2753.%E2%80%85%EC%9C%A4%EB%85%84) |
@@ -61,7 +62,7 @@
 </details>
 
 <details>
-<summary><b>🟤 Bronze IV</b> (20)</summary>
+<summary><b>🟤 Bronze IV</b> (19)</summary>
 
 | 문제 | 링크 |
 | ----- | ---- |
@@ -71,7 +72,6 @@
 | 2440 - 별 찍기 － 3 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/2440.%E2%80%85%EB%B3%84%E2%80%85%EC%B0%8D%EA%B8%B0%E2%80%85%EF%BC%8D%E2%80%853) |
 | 2480 - 주사위 세개 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/2480.%E2%80%85%EC%A3%BC%EC%82%AC%EC%9C%84%E2%80%85%EC%84%B8%EA%B0%9C) |
 | 2530 - 인공지능 시계 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/2530.%E2%80%85%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5%E2%80%85%EC%8B%9C%EA%B3%84) |
-| 2742 - 기찍 N | [링크](./%EB%B0%B1%EC%A4%80/Bronze/2742.%E2%80%85%EA%B8%B0%EC%B0%8D%E2%80%85N) |
 | 2752 - 세수정렬 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/2752.%E2%80%85%EC%84%B8%EC%88%98%EC%A0%95%EB%A0%AC) |
 | 2845 - 파티가 끝나고 난 뒤 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/2845.%E2%80%85%ED%8C%8C%ED%8B%B0%EA%B0%80%E2%80%85%EB%81%9D%EB%82%98%EA%B3%A0%E2%80%85%EB%82%9C%E2%80%85%EB%92%A4) |
 | 3046 - R2 | [링크](./%EB%B0%B1%EC%A4%80/Bronze/3046.%E2%80%85R2) |
