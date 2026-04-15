@@ -6,8 +6,8 @@ from urllib import parse
 
 README_PATH = "README.md"
 
-START_MARKER = "<!-- AA-README-START -->"
-END_MARKER = "<!-- AA-README-END -->"
+START_MARKER = "<" + "!-- AA-README-START --" + ">"
+END_MARKER = "<" + "!-- AA-README-END --" + ">"
 
 PLATFORM_TITLES = {
     "백준": "📗 백준",
@@ -58,6 +58,12 @@ def extract_problem_number(folder_name: str):
 def get_tier_title(main_cat: str, sub_cat: str) -> str:
     if main_cat == "백준":
         return BOJ_TIER_LABELS.get(sub_cat, f"◻️ {sub_cat}")
+    
+    if main_cat == "goormlevel":
+        if sub_cat.strip().lower() in ["undefined", "unrated"]:
+            return "☁️ Level"
+        return f"☁️ Lv.{sub_cat}"
+        
     if sub_cat.strip().lower() == "unrated":
         return "◼️ Unrated"
     if main_cat == "프로그래머스":
@@ -123,34 +129,6 @@ def build_other_platform_data(main_cat: str):
                 data[sub_cat].append({"folder": problem_folder, "path": problem_path})
     return data
 
-def build_goorm_data():
-    problems = []
-    root_path = os.path.join(".", "goormlevel")
-    if not os.path.exists(root_path):
-        return problems
-
-    for level_dir in os.listdir(root_path):
-        level_path = os.path.join(root_path, level_dir)
-        if not os.path.isdir(level_path): continue
-        
-        for prob_dir in os.listdir(level_path):
-            prob_path = os.path.join(level_path, prob_dir)
-            if not os.path.isdir(prob_path): continue
-            
-            try:
-                num = int(level_dir)
-                display_name = f"{level_dir} - {prob_dir}"
-            except ValueError:
-                num = float('inf')
-                display_name = prob_dir if level_dir.lower() in ['undefined', 'unrated'] else f"{level_dir} - {prob_dir}"
-
-            problems.append({
-                "folder": display_name,
-                "path": prob_path,
-                "num": num
-            })
-    return problems
-
 def sort_programmers_key(value: str):
     try: return (0, int(value))
     except ValueError: return (1, value)
@@ -159,6 +137,12 @@ def sort_swea_key(value: str):
     order = ["D1", "D2", "D3", "D4", "D5", "D6", "D7", "D8", "Unrated"]
     try: return order.index(value.upper())
     except ValueError: return 999
+
+def sort_goorm_key(value: str):
+    if value.lower() in ["undefined", "unrated"]:
+        return (999, value)
+    try: return (0, int(value))
+    except ValueError: return (1, value)
 
 def render_problem_table(problem_items: list[dict]) -> str:
     lines = ["\n| 문제 | 링크 |\n| ----- | ---- |"]
@@ -182,16 +166,6 @@ def render_platform_section(main_cat: str, grouped_data: dict, sorted_keys: list
             lines.append(render_tier_details(main_cat, key, grouped_data[key]))
     return "\n".join(lines)
 
-def render_goorm_section(problem_items: list[dict]) -> str:
-    if not problem_items: return ""
-    title = get_platform_title("goormlevel")
-    lines = ["---", f"### {title} ({len(problem_items)})\n", "| 문제 | 링크 |\n| ----- | ---- |"]
-    
-    for item in sorted(problem_items, key=lambda x: x["num"]):
-        link = parse.quote(item["path"], safe="/")
-        lines.append(f"| {item['folder']} | [링크]({link}) |")
-    return "\n".join(lines) + "\n"
-
 def build_generated_content() -> str:
     parts = []
 
@@ -212,9 +186,10 @@ def build_generated_content() -> str:
         parts.append(render_platform_section("SWEA", swea_data, sorted(swea_data.keys(), key=sort_swea_key)))
 
     # 4) 구름레벨
-    goorm_data = build_goorm_data()
+    goorm_data = build_other_platform_data("goormlevel")
     if goorm_data:
-        parts.append(render_goorm_section(goorm_data))
+        sorted_goorm_keys = sorted(goorm_data.keys(), key=sort_goorm_key)
+        parts.append(render_platform_section("goormlevel", goorm_data, sorted_goorm_keys))
 
     return "\n".join(parts).strip() + "\n"
 
