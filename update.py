@@ -60,9 +60,7 @@ def get_tier_title(main_cat: str, sub_cat: str) -> str:
         return BOJ_TIER_LABELS.get(sub_cat, f"◻️ {sub_cat}")
     
     if main_cat == "goormlevel":
-        if sub_cat.strip().lower() in ["undefined", "unrated"]:
-            return "☁️ Level"
-        return f"☁️ Lv.{sub_cat}"
+        return "☁️ level"
         
     if sub_cat.strip().lower() == "unrated":
         return "◼️ Unrated"
@@ -129,6 +127,28 @@ def build_other_platform_data(main_cat: str):
                 data[sub_cat].append({"folder": problem_folder, "path": problem_path})
     return data
 
+def build_goorm_data():
+    data = {"level": []}
+    root_path = os.path.join(".", "goormlevel")
+    if not os.path.exists(root_path): return {}
+
+    for prob_id_dir in os.listdir(root_path):
+        prob_id_path = os.path.join(root_path, prob_id_dir)
+        if not os.path.isdir(prob_id_path): continue
+        
+        for prob_folder in os.listdir(prob_id_path):
+            prob_path = os.path.join(prob_id_path, prob_folder)
+            if not os.path.isdir(prob_path): continue
+            
+            data["level"].append({
+                "folder": prob_folder,
+                "path": prob_path
+            })
+            
+    if not data["level"]:
+        return {}
+    return data
+
 def sort_programmers_key(value: str):
     try: return (0, int(value))
     except ValueError: return (1, value)
@@ -137,12 +157,6 @@ def sort_swea_key(value: str):
     order = ["D1", "D2", "D3", "D4", "D5", "D6", "D7", "D8", "Unrated"]
     try: return order.index(value.upper())
     except ValueError: return 999
-
-def sort_goorm_key(value: str):
-    if value.lower() in ["undefined", "unrated"]:
-        return (999, value)
-    try: return (0, int(value))
-    except ValueError: return (1, value)
 
 def render_problem_table(problem_items: list[dict]) -> str:
     lines = ["\n| 문제 | 링크 |\n| ----- | ---- |"]
@@ -186,10 +200,9 @@ def build_generated_content() -> str:
         parts.append(render_platform_section("SWEA", swea_data, sorted(swea_data.keys(), key=sort_swea_key)))
 
     # 4) 구름레벨
-    goorm_data = build_other_platform_data("goormlevel")
+    goorm_data = build_goorm_data()
     if goorm_data:
-        sorted_goorm_keys = sorted(goorm_data.keys(), key=sort_goorm_key)
-        parts.append(render_platform_section("goormlevel", goorm_data, sorted_goorm_keys))
+        parts.append(render_platform_section("goormlevel", goorm_data, ["level"]))
 
     return "\n".join(parts).strip() + "\n"
 
