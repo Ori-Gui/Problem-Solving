@@ -3,7 +3,7 @@
 
 <!-- AA-README-START -->
 ---
-### 📗 백준 (345)
+### 📗 백준 (346)
 
 <details>
 <summary><b>🟤 Bronze V</b> (48)</summary>
@@ -174,7 +174,7 @@
 </details>
 
 <details>
-<summary><b>⚪ Silver V</b> (39)</summary>
+<summary><b>⚪ Silver V</b> (40)</summary>
 
 | 문제 | 링크 |
 | ----- | ---- |
@@ -193,6 +193,7 @@
 | 1436 - 영화감독 숌 | [링크](./%EB%B0%B1%EC%A4%80/Silver/1436.%E2%80%85%EC%98%81%ED%99%94%EA%B0%90%EB%8F%85%E2%80%85%EC%88%8C) |
 | 1439 - 뒤집기 | [링크](./%EB%B0%B1%EC%A4%80/Silver/1439.%E2%80%85%EB%92%A4%EC%A7%91%EA%B8%B0) |
 | 1475 - 방 번호 | [링크](./%EB%B0%B1%EC%A4%80/Silver/1475.%E2%80%85%EB%B0%A9%E2%80%85%EB%B2%88%ED%98%B8) |
+| 1476 - 날짜 계산 | [링크](./%EB%B0%B1%EC%A4%80/Silver/1476.%E2%80%85%EB%82%A0%EC%A7%9C%E2%80%85%EA%B3%84%EC%82%B0) |
 | 1531 - 투명 | [링크](./%EB%B0%B1%EC%A4%80/Silver/1531.%E2%80%85%ED%88%AC%EB%AA%85) |
 | 1652 - 누울 자리를 찾아라 | [링크](./%EB%B0%B1%EC%A4%80/Silver/1652.%E2%80%85%EB%88%84%EC%9A%B8%E2%80%85%EC%9E%90%EB%A6%AC%EB%A5%BC%E2%80%85%EC%B0%BE%EC%95%84%EB%9D%BC) |
 | 1676 - 팩토리얼 0의 개수 | [링크](./%EB%B0%B1%EC%A4%80/Silver/1676.%E2%80%85%ED%8C%A9%ED%86%A0%EB%A6%AC%EC%96%BC%E2%80%850%EC%9D%98%E2%80%85%EA%B0%9C%EC%88%98) |
