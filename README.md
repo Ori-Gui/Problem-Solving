@@ -701,8 +701,13 @@
 ---
 ### 📙 구름레벨 (1)
 
+<details>
+<summary><b>☁️ Lv.47882</b> (1)</summary>
+
 | 문제 | 링크 |
 | ----- | ---- |
-| 47882 - 1. 헷갈리는 작대기 | [링크](./goormlevel/47882/1.%E2%80%85%ED%97%B7%EA%B0%88%EB%A6%AC%EB%8A%94%E2%80%85%EC%9E%91%EB%8C%80%EA%B8%B0) |
+| 1 - 헷갈리는 작대기 | [링크](./goormlevel/47882/1.%E2%80%85%ED%97%B7%EA%B0%88%EB%A6%AC%EB%8A%94%E2%80%85%EC%9E%91%EB%8C%80%EA%B8%B0) |
+
+</details>
 
 <!-- AA-README-END -->
