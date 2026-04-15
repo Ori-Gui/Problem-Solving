@@ -3,7 +3,7 @@
 
 <!-- AA-README-START -->
 ---
-### 📗 백준 (350)
+### 📗 백준 (351)
 
 <details>
 <summary><b>🟤 Bronze V</b> (48)</summary>
@@ -327,7 +327,7 @@
 </details>
 
 <details>
-<summary><b>⚪ Silver I</b> (19)</summary>
+<summary><b>⚪ Silver I</b> (20)</summary>
 
 | 문제 | 링크 |
 | ----- | ---- |
@@ -346,6 +346,7 @@
 | 2667 - 단지번호붙이기 | [링크](./%EB%B0%B1%EC%A4%80/Silver/2667.%E2%80%85%EB%8B%A8%EC%A7%80%EB%B2%88%ED%98%B8%EB%B6%99%EC%9D%B4%EA%B8%B0) |
 | 6236 - 용돈 관리 | [링크](./%EB%B0%B1%EC%A4%80/Silver/6236.%E2%80%85%EC%9A%A9%EB%8F%88%E2%80%85%EA%B4%80%EB%A6%AC) |
 | 14888 - 연산자 끼워넣기 | [링크](./%EB%B0%B1%EC%A4%80/Silver/14888.%E2%80%85%EC%97%B0%EC%82%B0%EC%9E%90%E2%80%85%EB%81%BC%EC%9B%8C%EB%84%A3%EA%B8%B0) |
+| 14889 - 스타트와 링크 | [링크](./%EB%B0%B1%EC%A4%80/Silver/14889.%E2%80%85%EC%8A%A4%ED%83%80%ED%8A%B8%EC%99%80%E2%80%85%EB%A7%81%ED%81%AC) |
 | 14940 - 쉬운 최단거리 | [링크](./%EB%B0%B1%EC%A4%80/Silver/14940.%E2%80%85%EC%89%AC%EC%9A%B4%E2%80%85%EC%B5%9C%EB%8B%A8%EA%B1%B0%EB%A6%AC) |
 | 15724 - 주지수 | [링크](./%EB%B0%B1%EC%A4%80/Silver/15724.%E2%80%85%EC%A3%BC%EC%A7%80%EC%88%98) |
 | 17615 - 볼 모으기 | [링크](./%EB%B0%B1%EC%A4%80/Silver/17615.%E2%80%85%EB%B3%BC%E2%80%85%EB%AA%A8%EC%9C%BC%EA%B8%B0) |
