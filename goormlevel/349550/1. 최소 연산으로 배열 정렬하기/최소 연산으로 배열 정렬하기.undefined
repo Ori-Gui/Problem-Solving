@@ -1,0 +1,56 @@
+import java.util.*;
+import java.io.*;
+
+class Main {
+		public static void main(String[] args) throws Exception {
+		    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        int[] A = new int[N + 1];
+        int[] B = new int[N + 1];
+
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        for (int i = 1; i <= N; i++) {
+            A[i] = Integer.parseInt(st.nextToken());
+            B[i] = A[i];
+        }
+
+        Arrays.sort(B, 1, N + 1);
+
+        List<Integer> diff = new ArrayList<>();
+        for (int i = 1; i <= N; i++) {
+            if (A[i] != B[i]) {
+                diff.add(i);
+            }
+        }
+
+        if (diff.isEmpty()) {
+            System.out.println("yes");
+            return;
+        }
+
+        int l = diff.get(0);
+        int r = diff.get(diff.size() - 1);
+
+        if (diff.size() == 2) {
+            System.out.println("yes");
+            System.out.println("swap " + l + " " + r);
+            return;
+        }
+
+        if (checkReverse(A, B, l, r)) {
+            System.out.println("yes");
+            System.out.println("reverse " + l + " " + r);
+        } else {
+            System.out.println("no");
+        }
+    }
+
+    private static boolean checkReverse(int[] A, int[] B, int l, int r) {
+        for (int i = 0; i <= (r - l); i++) {
+            if (A[l + i] != B[r - i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
