@@ -3,7 +3,7 @@
 
 <!-- AA-README-START -->
 ---
-### 📗 백준 (351)
+### 📗 백준 (352)
 
 <details>
 <summary><b>🟤 Bronze V</b> (48)</summary>
@@ -459,6 +459,15 @@
 | 2169 - 로봇 조종하기 | [링크](./%EB%B0%B1%EC%A4%80/Gold/2169.%E2%80%85%EB%A1%9C%EB%B4%87%E2%80%85%EC%A1%B0%EC%A2%85%ED%95%98%EA%B8%B0) |
 | 3687 - 성냥개비 | [링크](./%EB%B0%B1%EC%A4%80/Gold/3687.%E2%80%85%EC%84%B1%EB%83%A5%EA%B0%9C%EB%B9%84) |
 | 9527 - 1의 개수 세기 | [링크](./%EB%B0%B1%EC%A4%80/Gold/9527.%E2%80%851%EC%9D%98%E2%80%85%EA%B0%9C%EC%88%98%E2%80%85%EC%84%B8%EA%B8%B0) |
+
+</details>
+
+<details>
+<summary><b>🟡 Gold I</b> (1)</summary>
+
+| 문제 | 링크 |
+| ----- | ---- |
+| 24042 - 횡단보도 | [링크](./%EB%B0%B1%EC%A4%80/Gold/24042.%E2%80%85%ED%9A%A1%EB%8B%A8%EB%B3%B4%EB%8F%84) |
 
 </details>
 
