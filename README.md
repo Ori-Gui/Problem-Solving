@@ -3,7 +3,7 @@
 
 <!-- AA-README-START -->
 ---
-### 📗 백준 (352)
+### 📗 백준 (353)
 
 <details>
 <summary><b>🟤 Bronze V</b> (48)</summary>
@@ -463,10 +463,11 @@
 </details>
 
 <details>
-<summary><b>🟡 Gold I</b> (1)</summary>
+<summary><b>🟡 Gold I</b> (2)</summary>
 
 | 문제 | 링크 |
 | ----- | ---- |
+| 22954 - 그래프 트리 분할 | [링크](./%EB%B0%B1%EC%A4%80/Gold/22954.%E2%80%85%EA%B7%B8%EB%9E%98%ED%94%84%E2%80%85%ED%8A%B8%EB%A6%AC%E2%80%85%EB%B6%84%ED%95%A0) |
 | 24042 - 횡단보도 | [링크](./%EB%B0%B1%EC%A4%80/Gold/24042.%E2%80%85%ED%9A%A1%EB%8B%A8%EB%B3%B4%EB%8F%84) |
 
 </details>
