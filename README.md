@@ -503,7 +503,7 @@
 </details>
 
 ---
-### 📕 프로그래머스 (94)
+### 📕 프로그래머스 (95)
 
 <details>
 <summary><b>🔶 Lv.0</b> (62)</summary>
@@ -630,12 +630,13 @@
 </details>
 
 <details>
-<summary><b>🔶 Lv.4</b> (2)</summary>
+<summary><b>🔶 Lv.4</b> (3)</summary>
 
 | 문제 | 링크 |
 | ----- | ---- |
 | 42897 - 도둑질 | [링크](./%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/4/42897.%E2%80%85%EB%8F%84%EB%91%91%EC%A7%88) |
 | 67260 - ［카카오 인턴］ 동굴 탐험 | [링크](./%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/4/67260.%E2%80%85%EF%BC%BB%EC%B9%B4%EC%B9%B4%EC%98%A4%E2%80%85%EC%9D%B8%ED%84%B4%EF%BC%BD%E2%80%85%EB%8F%99%EA%B5%B4%E2%80%85%ED%83%90%ED%97%98) |
+| 144856 - 저자 별 카테고리 별 매출액 집계하기 | [링크](./%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/4/144856.%E2%80%85%EC%A0%80%EC%9E%90%E2%80%85%EB%B3%84%E2%80%85%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC%E2%80%85%EB%B3%84%E2%80%85%EB%A7%A4%EC%B6%9C%EC%95%A1%E2%80%85%EC%A7%91%EA%B3%84%ED%95%98%EA%B8%B0) |
 
 </details>
 
